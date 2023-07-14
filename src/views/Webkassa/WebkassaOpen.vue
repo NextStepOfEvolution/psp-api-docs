@@ -1,11 +1,8 @@
 <script setup>
 import webkassaOpenExample from '@/views/Webkassa/webkassa_open.js';
-import 'vue-code-highlight/themes/prism-coy.css';
-import { getCurrentInstance } from 'vue';
 
 // import 'prism-es6/components/prism-php';
 // import 'prism-es6/components/prism-markup-templating';
-console.log(getCurrentInstance().appContext.config.globalProperties );
 const table = [
     {
         param: 'VENDOR_ID',

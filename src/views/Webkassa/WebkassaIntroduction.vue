@@ -5,20 +5,20 @@ import { ref } from 'vue';
 import WebkassaIMap from './WebkassaIMap.vue'
 const images = [
     {
-        itemImageSrc: '/images/webkassa-steps/terminal_redirect_open.png',
-        thumbnailImageSrc: '/images/webkassa-steps/terminal_redirect_open.png',
+        itemImageSrc: '@/assets/images/webkassa-steps/terminal_redirect_open.png',
+        thumbnailImageSrc: '@/assets/images/webkassa-steps/terminal_redirect_open.png',
         title: 'Форма ввода карточных данных',
         alt: '#'
     },
     {
-        itemImageSrc: '/images/webkassa-steps/terminal_redirect_card.png',
-        thumbnailImageSrc: '/images/webkassa-steps/terminal_redirect_card.png',
+        itemImageSrc: '@/assets/images/webkassa-steps/terminal_redirect_card.png',
+        thumbnailImageSrc: '@/assets/images/webkassa-steps/terminal_redirect_card.png',
         title: 'Форма ввода кода подтверждения',
         alt: '#'
     },
     {
-        itemImageSrc: '/images/webkassa-steps/terminal_redirect_success.png',
-        thumbnailImageSrc: '/images/webkassa-steps/terminal_redirect_success.png',
+        itemImageSrc: '@/assets/images/webkassa-steps/terminal_redirect_success.png',
+        thumbnailImageSrc: '@/assets/images/webkassa-steps/terminal_redirect_success.png',
         title: 'Страница успешной оплаты#',
         alt: '#'
     }

@@ -21,7 +21,7 @@ const pt = reactive({root: {class: '!bg-purple-800'}, icon: {class: { '!text-whi
                                 <img
                                     class="mr-2 w-24"
                                     alt="PSP"
-                                    src="/images/logo-blue.png"
+                                    src="@/assets/images/logo-blue.png"
                                     height="40"
                                 />
                             </div>

@@ -5,8 +5,8 @@ import Card from 'primevue/card';
 
 const images = [
     {
-        itemImageSrc: '/images/webkassa-steps/treasure_diagram.png',
-        thumbnailImageSrc: '/images/webkassa-steps/treasure_diagram.png',
+        itemImageSrc: '@/assets/images/webkassa-steps/treasure_diagram.png',
+        thumbnailImageSrc: '@/assets/images/webkassa-steps/treasure_diagram.png',
         title: 'Диограмма порядка проведения платежа',
         alt: '#'
     }, 

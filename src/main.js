@@ -17,6 +17,7 @@ import TabPanel from 'primevue/tabpanel';
 import TabView from 'primevue/tabview';
 import vueCodeHighlight from 'vue-code-highlight';
 import 'vue-highlight-code/dist/style.css';
+import 'vue-code-highlight/themes/prism-coy.css';
 
 const app = createApp(App);
 app.component('PrimeChip', Chip) 

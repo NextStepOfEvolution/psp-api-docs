@@ -8,7 +8,7 @@
         <div class="grid grid-cols-2 gap-4">
             <Card class="text-center">
               <template #header>
-                  <img class="mx-auto" src="/images/tools/terminal.png" alt="Web-касса"/>
+                  <img class="mx-auto" src="@/assets/images/tools/terminal.png" alt="Web-касса"/>
               </template>
               <template #title><b>Web-касса</b></template> 
               <template #content>
@@ -17,7 +17,7 @@
             </Card> 
             <Card class="text-center">
               <template #header>
-                  <img class="mx-auto" src="/images/tools/terminal.png" alt="Web-касса"/>
+                  <img class="mx-auto" src="@/assets/images/tools/terminal.png" alt="Web-касса"/>
               </template>
               <template #title><b>Web-терминал</b></template> 
               <template #content>
@@ -26,7 +26,7 @@
             </Card> 
             <Card class="text-center">
               <template #header>
-                  <img class="mx-auto" src="/images/tools/terminal.png" alt="Web-касса"/>
+                  <img class="mx-auto" src="@/assets/images/tools/terminal.png" alt="Web-касса"/>
               </template>
               <template #title><b>Host-терминал</b></template> 
               <template #content>
@@ -35,7 +35,7 @@
             </Card> 
             <Card class="text-center">
               <template #header>
-                  <img class="mx-auto" src="/images/tools/terminal.png" alt="Web-касса"/>
+                  <img class="mx-auto" src="@/assets/images/tools/terminal.png" alt="Web-касса"/>
               </template>
               <template #title><b>Платежный шлюз</b></template> 
               <template #content>
