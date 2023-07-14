@@ -2,11 +2,11 @@
 import { ref } from "vue"; 
 import Galleria from 'primevue/galleria'; 
 import Card from 'primevue/card'; 
-
+import paymentProcessDiogram from '@/assets/images/webkassa-steps/treasure_diagram.png';
 const images = [
     {
-        itemImageSrc: '@/assets/images/webkassa-steps/treasure_diagram.png',
-        thumbnailImageSrc: '@/assets/images/webkassa-steps/treasure_diagram.png',
+        itemImageSrc: paymentProcessDiogram,
+        thumbnailImageSrc: paymentProcessDiogram,
         title: 'Диограмма порядка проведения платежа',
         alt: '#'
     }, 
