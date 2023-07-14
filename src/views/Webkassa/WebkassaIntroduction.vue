@@ -3,22 +3,25 @@ import Card from 'primevue/card';
 import Galleria from 'primevue/galleria';
 import { ref } from 'vue';
 import WebkassaIMap from './WebkassaIMap.vue'
+import inputCardDetailsImage from '@/assets/images/webkassa-steps/terminal_redirect_open.png';
+import inputConfirmationCodeImage from '@/assets/images/webkassa-steps/terminal_redirect_card.png';
+import successPaymentImage from '@/assets/images/webkassa-steps/terminal_redirect_success.png';
 const images = [
     {
-        itemImageSrc: '@/assets/images/webkassa-steps/terminal_redirect_open.png',
-        thumbnailImageSrc: '@/assets/images/webkassa-steps/terminal_redirect_open.png',
+        itemImageSrc: inputCardDetailsImage,
+        thumbnailImageSrc: inputCardDetailsImage,
         title: 'Форма ввода карточных данных',
         alt: '#'
     },
     {
-        itemImageSrc: '@/assets/images/webkassa-steps/terminal_redirect_card.png',
-        thumbnailImageSrc: '@/assets/images/webkassa-steps/terminal_redirect_card.png',
+        itemImageSrc: inputConfirmationCodeImage,
+        thumbnailImageSrc: inputConfirmationCodeImage,
         title: 'Форма ввода кода подтверждения',
         alt: '#'
     },
     {
-        itemImageSrc: '@/assets/images/webkassa-steps/terminal_redirect_success.png',
-        thumbnailImageSrc: '@/assets/images/webkassa-steps/terminal_redirect_success.png',
+        itemImageSrc: successPaymentImage,
+        thumbnailImageSrc: successPaymentImage,
         title: 'Страница успешной оплаты#',
         alt: '#'
     }
