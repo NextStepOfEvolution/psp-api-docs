@@ -37,6 +37,9 @@ import MerchantAPIFiscalization from './MerchantAPI/MerchantAPIFiscalization.vue
         <MerchantAPIStatement class="link" id="webkassa-merchant-api-statement" :table="tables?.statement"/>
         <MerchantAPIStatus class="link" id="webkassa-merchant-api-status" :table="tables?.status"/>
         <MerchantAPIFiscalization class="link" id="webkassa-merchant-api-fiscalization" :table="tables?.fiscalization"/>
+        <BlockPagination
+            :prev="{ label: 'Этап 2. Открытие Web-кассы', name: 'webkassa-open' }" 
+        />
     </div>
 </template>
 <style></style>

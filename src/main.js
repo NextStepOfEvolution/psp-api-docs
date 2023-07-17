@@ -14,6 +14,7 @@ import InlineMessage from 'primevue/inlinemessage';
 import TabPanel from 'primevue/tabpanel';
 import TabView from 'primevue/tabview';
 import CodeBlock from 'vue3-code-block';
+import BlockPagination from '@/components/BlockPagination.vue';
 
 import 'primevue/resources/themes/tailwind-light/theme.css';
 import 'primeicons/primeicons.css';
@@ -29,6 +30,7 @@ app.component('PrimeChip', Chip)
     .component('TabPanel', TabPanel)
     .component('InlineMessage', InlineMessage)
     .component('CodeBlock', CodeBlock)
+    .component('BlockPagination', BlockPagination)
     .use(router)
     .use(PrimeVue)
     .mount('#app');

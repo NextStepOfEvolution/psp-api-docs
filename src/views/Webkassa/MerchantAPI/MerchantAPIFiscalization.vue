@@ -12,7 +12,7 @@ const responseCode =
         <h2 class="text-2xl font-bold my-4">Фискальные данные(необязательный) (Fiscalization).</h2>
         <p class="my-4">Данным запросом система PSP получает данные о платеже для фискализации</p>
         <p class="my-4"><b>Параметры запроса от PSP:</b></p>
-        <DataTable class="my-4" :value="table.request.data" tableStyle="min-width: 50rem">
+        <DataTable :rowHover="true" class="my-4" :value="table.request.data" tableStyle="min-width: 50rem">
             <Column
                 v-for="(value, key, index) in table.request.columns"
                 v-bind:key="index"
@@ -21,7 +21,7 @@ const responseCode =
             >
             </Column>
         </DataTable>
-        <DataTable class="my-4" :value="table.response.data" tableStyle="min-width: 50rem">
+        <DataTable :rowHover="true" class="my-4" :value="table.response.data" tableStyle="min-width: 50rem">
             <Column
                 v-for="(value, key, index) in table.response.columns"
                 v-bind:key="index"
@@ -57,7 +57,7 @@ const responseCode =
             </TabPanel>
         </TabView>
         <p><b>PARAMETERS: </b></p>
-        <DataTable class="my-4" :value="table.parameters.data" tableStyle="min-width: 50rem">
+        <DataTable :rowHover="true" class="my-4" :value="table.parameters.data" tableStyle="min-width: 50rem">
             <Column
                 v-for="(value, key, index) in table.parameters.columns"
                 v-bind:key="index"
@@ -67,7 +67,7 @@ const responseCode =
             </Column>
         </DataTable>
         <p><b>ITEM: </b></p>
-        <DataTable class="my-4" :value="table.item.data" tableStyle="min-width: 50rem">
+        <DataTable :rowHover="true" class="my-4" :value="table.item.data" tableStyle="min-width: 50rem">
             <Column
                 v-for="(value, key, index) in table.item.columns"
                 v-bind:key="index"

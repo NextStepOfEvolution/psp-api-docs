@@ -1,5 +1,4 @@
 <script setup>
-import DataTable from 'primevue/datatable';
 const table = [
     {
         param: 'URL',
@@ -37,11 +36,14 @@ const table = [
                 информацию для доступа к кабинету:</b
             >
         </p>
-        <DataTable class="my-4" :value="table" tableStyle="min-width: 50rem">
+        <DataTable :rowHover="true" class="my-4" :value="table" tableStyle="min-width: 50rem">
             <Column field="param" header="Параметр"></Column>
             <Column field="description" header="Описание"></Column>
         </DataTable>
+        <BlockPagination
+            :prev="{ label: 'Общие сведения', name: 'webkassa-introduction' }"
+            :next="{ label: 'Этап 2. Открытие Web-кассы', name: 'webkassa-open' }"
+        />
     </div>
 </template>
-<style> 
-</style>
+<style></style>

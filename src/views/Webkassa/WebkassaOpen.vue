@@ -102,7 +102,7 @@ const table = [
             <PrimeChip class="m-1">SIGN_TIME</PrimeChip>,
             <PrimeChip class="m-1">SIGN_STRING</PrimeChip>,
         </p>
-        <DataTable class="my-4 leading-5" :value="table" tableStyle="min-width: 50rem">
+        <DataTable :rowHover="true" class="my-4 leading-5" :value="table" tableStyle="min-width: 50rem">
             <Column field="param" header="Параметр"></Column>
             <Column field="format" header="Формат"></Column>
             <Column field="is_required" header="Обязательный"></Column>
@@ -180,6 +180,10 @@ const table = [
             В результате MD5 хэширования этой строки - полученная подпись:
             <PrimeChip>2e483be74e568b4d7d4a7d9421f404fc</PrimeChip>
         </p>
+        <BlockPagination
+            :prev="{ label: 'Этап 1. Подготовка к интеграции', name: 'webkassa-preparation' }"
+            :next="{ label: 'Этап 3. Merchant API', name: 'webkassa-merchant-api' }"
+        />
     </div>
 </template>
 <style></style>

@@ -51,39 +51,56 @@ const router = createRouter({
                         {
                             path: 'webkassa-merchant-api-info',
                             name: 'webkassa-merchant-api-info',
-                            component: () => import('@/views/Webkassa/MerchantAPI/MerchantAPIInfo.vue')
+                            component: () =>
+                                import('@/views/Webkassa/MerchantAPI/MerchantAPIInfo.vue')
                         },
                         {
                             path: 'webkassa-merchant-api-pay',
                             name: 'webkassa-merchant-api-pay',
-                            component: () => import('@/views/Webkassa/MerchantAPI/MerchantAPIPay.vue')
+                            component: () =>
+                                import('@/views/Webkassa/MerchantAPI/MerchantAPIPay.vue')
                         },
                         {
                             path: 'webkassa-merchant-api-notify',
                             name: 'webkassa-merchant-api-notify',
-                            component: () => import('@/views/Webkassa/MerchantAPI/MerchantAPINotify.vue')
+                            component: () =>
+                                import('@/views/Webkassa/MerchantAPI/MerchantAPINotify.vue')
                         },
                         {
                             path: 'webkassa-merchant-api-cancel',
                             name: 'webkassa-merchant-api-cancel',
-                            component: () => import('@/views/Webkassa/MerchantAPI/MerchantAPICancel.vue')
+                            component: () =>
+                                import('@/views/Webkassa/MerchantAPI/MerchantAPICancel.vue')
                         },
                         {
                             path: 'webkassa-merchant-api-statement',
                             name: 'webkassa-merchant-api-statement',
-                            component: () => import('@/views/Webkassa/MerchantAPI/MerchantAPIStatement.vue')
+                            component: () =>
+                                import('@/views/Webkassa/MerchantAPI/MerchantAPIStatement.vue')
                         },
                         {
                             path: 'webkassa-merchant-api-status',
                             name: 'webkassa-merchant-api-status',
-                            component: () => import('@/views/Webkassa/MerchantAPI/MerchantAPIStatus.vue')
+                            component: () =>
+                                import('@/views/Webkassa/MerchantAPI/MerchantAPIStatus.vue')
                         },
                         {
                             path: 'webkassa-merchant-api-fiscalization',
                             name: 'webkassa-merchant-api-fiscalization',
-                            component: () => import('@/views/Webkassa/MerchantAPI/MerchantAPIFiscalization.vue')
-                        },
+                            component: () =>
+                                import('@/views/Webkassa/MerchantAPI/MerchantAPIFiscalization.vue')
+                        }
                     ]
+                },
+                {
+                    path: 'webkassa-auto-test',
+                    name: 'webkassa-auto-test',
+                    component: () => import('@/views/Webkassa/WebkassaAutoTest.vue')
+                },
+                {
+                    path: 'webkassa-goto-prodiction',
+                    name: 'webkassa-goto-prodiction',
+                    component: () => import('@/views/Webkassa/WebkassaGoProduction.vue')
                 }
             ]
         }
@@ -97,6 +114,15 @@ const router = createRouter({
                     resolve({
                         top: 80,
                         el: to.hash,
+                        behavior: 'smooth'
+                    });
+                }, 100);
+            });
+        } else {
+            return new Promise((resolve, _reject) => {
+                setTimeout(() => {
+                    resolve({
+                        top: 0,
                         behavior: 'smooth'
                     });
                 }, 100);

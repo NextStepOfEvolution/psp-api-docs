@@ -12,7 +12,7 @@ const responseCode = '{ "ERROR": 0, "ERROR_NOTE": "Success"  }';
             Данным запросом система PSP уведомляет Мерчанта об изменении статуса платежа.
         </p>
         <p class="my-4"><b>Параметры запроса от PSP:</b></p>
-        <DataTable class="my-4" :value="table.request.data" tableStyle="min-width: 50rem">
+        <DataTable :rowHover="true" class="my-4" :value="table.request.data" tableStyle="min-width: 50rem">
             <Column
                 v-for="(value, key, index) in table.request.columns"
                 v-bind:key="index"
@@ -22,7 +22,7 @@ const responseCode = '{ "ERROR": 0, "ERROR_NOTE": "Success"  }';
             </Column>
         </DataTable>
         <p class="my-4"><b>Параметры ответа от Мерчанта:</b></p>
-        <DataTable class="my-4" :value="table.response.data" tableStyle="min-width: 50rem">
+        <DataTable :rowHover="true" class="my-4" :value="table.response.data" tableStyle="min-width: 50rem">
             <Column
                 v-for="(value, key, index) in table.response.columns"
                 v-bind:key="index"

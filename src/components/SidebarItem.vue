@@ -8,8 +8,8 @@ const props = defineProps({
     <router-link
         :to="item.to"
         :class="[
-            item.to.name == props.currentRoute ? 'bg-purple-100 bg-purple-200 dark:bg-gray-200 dark:text-gray-900' : 'bg-white dark:bg-gray-700',
-            'block w-full max-w-max dark:text-gray-100 text-gray-600 rounded-md transition ease-in-out delay-50 hover:bg-gray-100 m-0.5 p-1.5'
+            item.to.name == props.currentRoute ? 'bg-purple-100 bg-gray-300 text-gray-900 dark:text-gray-900' : '',
+            'block w-full max-w-max dark:text-gray-200 text-gray-600 rounded-md transition ease-in-out delay-50 hover:bg-gray-100 m-0.5 p-1.5'
         ]"
     >
         {{ item.label }}

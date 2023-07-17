@@ -17,7 +17,7 @@ const responseCode = '{"ERROR": 0,"ERROR_NOTE": "Success"}'
         </p>
         <p><b>URL: https://agr.uz/pay_api/payment_status</b></p>
         <p class="my-4"><b>Параметры запроса от Мерчанта:</b></p>
-        <DataTable class="my-4" :value="table.request.data" tableStyle="min-width: 50rem">
+        <DataTable :rowHover="true" class="my-4" :value="table.request.data" tableStyle="min-width: 50rem">
             <Column
                 v-for="(value, key, index) in table.request.columns"
                 v-bind:key="index"
@@ -27,7 +27,7 @@ const responseCode = '{"ERROR": 0,"ERROR_NOTE": "Success"}'
             </Column>
         </DataTable>
         <p class="my-4"><b>Параметры ответа от PSP:</b></p>
-        <DataTable class="my-4" :value="table.response.data" tableStyle="min-width: 50rem">
+        <DataTable :rowHover="true" class="my-4" :value="table.response.data" tableStyle="min-width: 50rem">
             <Column
                 v-for="(value, key, index) in table.response.columns"
                 v-bind:key="index"
