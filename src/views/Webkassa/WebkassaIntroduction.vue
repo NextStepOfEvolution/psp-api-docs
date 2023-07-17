@@ -2,7 +2,7 @@
 import Card from 'primevue/card';
 import Galleria from 'primevue/galleria';
 import { ref } from 'vue';
-import WebkassaIMap from './WebkassaIMap.vue'
+import WebkassaIMap from './WebkassaIMap.vue';
 import inputCardDetailsImage from '@/assets/images/webkassa-steps/terminal_redirect_open.png';
 import inputConfirmationCodeImage from '@/assets/images/webkassa-steps/terminal_redirect_card.png';
 import successPaymentImage from '@/assets/images/webkassa-steps/terminal_redirect_success.png';
@@ -49,7 +49,7 @@ function imageClick(index) {
 </script>
 <template>
     <div class="">
-        <WebkassaIMap/>
+        <WebkassaIMap />
         <h2 class="text-2xl font-bold my-4">Обзор проведения платежа</h2>
         <Galleria
             v-model:activeIndex="activeIndex"
@@ -79,22 +79,27 @@ function imageClick(index) {
             </template>
         </Galleria>
         <div v-if="images" class="grid grid-cols-2 gap-4">
-            <Card v-for="(image, index) of images" :key="index" class="text-center">
+            <Card
+                v-for="(image, index) of images"
+                :key="index"
+                class="text-center dark:text-gray-200 dark:bg-gray-900"
+            >
                 <template #header>
-                    <img
-                        :src="image.thumbnailImageSrc"
-                        :alt="image.alt"
-                        style="cursor: pointer"
-                        class="w-full h-full object-contain m-2"
-                        @click="imageClick(index)"
-                    />
+                    <div class="m-2">
+                        <img
+                            :src="image.thumbnailImageSrc"
+                            :alt="image.alt"
+                            style="cursor: pointer"
+                            class="w-full h-full object-contain w-full"
+                            @click="imageClick(index)"
+                        />
+                    </div>
                 </template>
-                <template #title></template>
-                <template #content>
-                    <p>{{ image.title }}</p>
-                </template>
+                <template #title>
+                    <p class="text-lg">{{ image.title }}</p></template
+                >
             </Card>
         </div>
-    </div> 
+    </div>
 </template>
 <style></style>

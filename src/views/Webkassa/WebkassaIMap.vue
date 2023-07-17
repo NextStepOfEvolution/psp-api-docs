@@ -66,20 +66,21 @@ function imageClick(index) {
             </template>
         </Galleria>
         <div v-if="images" class="grid grid-cols-2 gap-4">
-            <Card v-for="(image, index) of images" :key="index" class="text-center">
+            <Card v-for="(image, index) of images" :key="index" class="text-center dark:text-gray-200 dark:bg-gray-900">
                 <template #header>
-                    <img
-                        :src="image.thumbnailImageSrc"
-                        :alt="image.alt"
-                        style="cursor: pointer"
-                        class="w-full h-full object-contain m-2"
-                        @click="imageClick(index)"
-                    />
+                    <div class="m-2">
+                        <img
+                            :src="image.thumbnailImageSrc"
+                            :alt="image.alt"
+                            style="cursor: pointer"
+                            class="w-full h-full object-contain p-2"
+                            @click="imageClick(index)"
+                        />
+                    </div>
                 </template>
-                <template #title></template>
-                <template #content>
-                    <p>{{ image.title }}</p>
-                </template>
+                <template #title>
+                    <div class="text-lg">{{ image.title }}</div>
+                </template> 
             </Card>
         </div>
     </div>

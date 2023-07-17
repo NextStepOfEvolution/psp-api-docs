@@ -1,5 +1,4 @@
 <script setup>
-import 'vue-code-highlight/themes/prism-coy.css';
 // import 'prism-es6/components/prism-php';
 // import 'prism-es6/components/prism-markup-templating';
 import tables from '@/views/Webkassa/webkassa_methods_data.js';
@@ -31,13 +30,13 @@ import MerchantAPIFiscalization from './MerchantAPI/MerchantAPIFiscalization.vue
             <PrimeChip>Cancel</PrimeChip>, <PrimeChip>Info</PrimeChip>, <PrimeChip>Statement</PrimeChip>
             и сохраните.
         </p>  
-        <MerchantAPIInfo id="webkassa-merchant-api-info" :table="tables?.info"/>
-        <MerchantAPIPay id="webkassa-merchant-api-pay" :table="tables?.pay"/>
-        <MerchantAPINotify id="webkassa-merchant-api-notify" :table="tables?.notify"/>
-        <MerchantAPICancel id="webkassa-merchant-api-cancel" :table="tables?.cancel"/>
-        <MerchantAPIStatement id="webkassa-merchant-api-statement" :table="tables?.statement"/>
-        <MerchantAPIStatus id="webkassa-merchant-api-status" :table="tables?.status"/>
-        <MerchantAPIFiscalization id="webkassa-merchant-api-fiscalization" :table="tables?.fiscalization"/>
+        <MerchantAPIInfo class="link" id="webkassa-merchant-api-info" :table="tables?.info"/>
+        <MerchantAPIPay class="link" id="webkassa-merchant-api-pay" :table="tables?.pay"/>
+        <MerchantAPINotify class="link" id="webkassa-merchant-api-notify" :table="tables?.notify"/>
+        <MerchantAPICancel class="link" id="webkassa-merchant-api-cancel" :table="tables?.cancel"/>
+        <MerchantAPIStatement class="link" id="webkassa-merchant-api-statement" :table="tables?.statement"/>
+        <MerchantAPIStatus class="link" id="webkassa-merchant-api-status" :table="tables?.status"/>
+        <MerchantAPIFiscalization class="link" id="webkassa-merchant-api-fiscalization" :table="tables?.fiscalization"/>
     </div>
 </template>
 <style></style>

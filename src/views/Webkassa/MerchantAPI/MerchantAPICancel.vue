@@ -2,6 +2,9 @@
 import { ref } from 'vue';
 const props = defineProps(['table']);
 const table = ref(props.table);
+const requestCode =
+    '{ "AGR_TRANS_ID": 1503642925905, "VENDOR_TRANS_ID": 1503642925906, "SIGN_TIME": 1503642926295, "SIGN_STRING": "5a30fbd0fab44be29310e4b493c9a287"}';
+const responseCode = '{ "ERROR": 0, "ERROR_NOTE": "Success" }';
 </script>
 <template>
     <div class="">
@@ -29,34 +32,28 @@ const table = ref(props.table);
         </DataTable>
         <TabView>
             <TabPanel header="Пример запроса от PSP:">
-                <InlineMessage class="h-80 w-full" severity="info my-3">
-                    <pre>{{
-                        JSON.stringify(
-                            {
-                                AGR_TRANS_ID: 1503642925905,
-                                VENDOR_TRANS_ID: 1503642925906,
-                                SIGN_TIME: 1503642926295,
-                                SIGN_STRING: '5a30fbd0fab44be29310e4b493c9a287'
-                            },
-                            undefined,
-                            2
-                        )
-                    }}</pre>
-                </InlineMessage>
+                <div class="h-48 w-full">
+                    <CodeBlock
+                        :code="requestCode"
+                        :persistentCopyButton="true"
+                        :highlightjs="true"
+                        lang="json"
+                        theme="atom-one-dark"
+                    >
+                    </CodeBlock>
+                </div>
             </TabPanel>
             <TabPanel header="Пример ответа от Мерчанта:">
-                <InlineMessage class="h-80 w-full" severity="info my-3">
-                    <pre>{{
-                        JSON.stringify(
-                            {
-                                ERROR: 0,
-                                ERROR_NOTE: 'Success'
-                            },
-                            undefined,
-                            2
-                        )
-                    }}</pre>
-                </InlineMessage>
+                <div class="h-48 w-full">
+                    <CodeBlock
+                        :code="responseCode"
+                        :persistentCopyButton="true"
+                        :highlightjs="true"
+                        lang="json"
+                        theme="atom-one-dark"
+                    >
+                    </CodeBlock>
+                </div>
             </TabPanel>
         </TabView>
     </div>

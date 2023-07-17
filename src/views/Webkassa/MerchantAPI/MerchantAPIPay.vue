@@ -2,6 +2,9 @@
 import { ref } from 'vue';
 const props = defineProps(['table']);
 const table = ref(props.table);
+const requestCode =
+    '{"ENVIRONMENT": "sandbox","VENDOR_ID": 902345,"PAYMENT_ID": 9,"PAYMENT_NAME": "uzcard","AGR_TRANS_ID": 1503639319870,"MERCHANT_TRANS_ID": 7,"MERCHANT_TRANS_AMOUNT": 1000,"MERCHANT_TRANS_DATA":    "eyJwYXJhbV9rZXlfMSI6InBhcmFtX3ZhbHVlXzEiLCJwYXJhbV9rZXlfMiI6InBhcmFtX3ZhbHVlXzIifQ==",    "SIGN_TIME": 1503639320833,    "SIGN_STRING": "87efeefc53bb259c11e21ab0223ef2df"}';
+const responseCode = '{"ERROR": 0,"ERROR_NOTE": "Success","VENDOR_TRANS_ID": 99987262}';
 </script>
 <template>
     <div class="">
@@ -31,47 +34,33 @@ const table = ref(props.table);
                 :header="value"
             >
             </Column>
-        </DataTable> 
+        </DataTable>
         <TabView>
             <TabPanel header="Пример запроса от PSP:">
-                <InlineMessage class="h-80 w-full" severity="info my-3">
-                    <pre>{{
-                        JSON.stringify(
-                            {
-                                ENVIRONMENT: 'sandbox',
-                                VENDOR_ID: 902345,
-                                PAYMENT_ID: 9,
-                                PAYMENT_NAME: 'uzcard',
-                                AGR_TRANS_ID: 1503639319870,
-                                MERCHANT_TRANS_ID: '7',
-                                MERCHANT_TRANS_AMOUNT: 1000,
-                                MERCHANT_TRANS_DATA:
-                                    'eyJwYXJhbV9rZXlfMSI6InBhcmFtX3ZhbHVlXzEiLCJwYXJhbV9rZXlfMiI6InBhcmFtX3ZhbHVlXzIifQ==',
-                                SIGN_TIME: 1503639320833,
-                                SIGN_STRING: '87efeefc53bb259c11e21ab0223ef2df'
-                            },
-                            undefined,
-                            2
-                        )
-                    }}</pre>
-                </InlineMessage>
+                <div class="h-80 w-full">
+                    <CodeBlock
+                        :code="requestCode"
+                        :highlightjs="true"
+                        :persistentCopyButton="true"
+                        lang="json"
+                        theme="atom-one-dark"
+                    >
+                    </CodeBlock>
+                </div>
             </TabPanel>
             <TabPanel header="Пример ответа от Мерчанта:">
-                <InlineMessage class="h-80 w-full" severity="info my-3">
-                    <pre>{{
-                        JSON.stringify(
-                            {
-                                ERROR: 0,
-                                ERROR_NOTE: 'Success',
-                                VENDOR_TRANS_ID: 99987262
-                            },
-                            undefined,
-                            2
-                        )
-                    }}</pre>
-                </InlineMessage>
+                <div class="h-80 w-full">
+                    <CodeBlock
+                        :code="responseCode"
+                        :highlightjs="true"
+                        :persistentCopyButton="true"
+                        lang="json"
+                        theme="atom-one-dark"
+                    >
+                    </CodeBlock>
+                </div>
             </TabPanel>
-        </TabView> 
+        </TabView>
     </div>
 </template>
 <style></style>

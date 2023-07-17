@@ -1,12 +1,14 @@
-<script setup> 
-import { ref } from 'vue';  
-const props = defineProps([
-    'table'
-]);
-const table = ref(props.table) 
+<script setup>
+import { ref } from 'vue';
+const props = defineProps(['table']);
+const table = ref(props.table);
+const requestCode =
+    '{ "MERCHANT_TRANS_ID": 7, "SIGN_TIME": 1503638389658,    "SIGN_STRING": "5777e5ed6eda5b5cca3f56a90cf53e96"}';
+const responseCode =
+    '{ "ERROR": 0,"ERROR_NOTE": "Success","PARAMETERS": {"full_name": "Test Test","balance": 1000,"email": "test@test.uz"}}';
 </script>
 <template>
-    <div class=""> 
+    <div class="">
         <h2 class="text-2xl font-bold my-4">
             3.1. Получения справочной информации по платежу (Info)
         </h2>
@@ -33,40 +35,30 @@ const table = ref(props.table)
         </DataTable>
         <TabView>
             <TabPanel header="Пример запроса от PSP:">
-                <InlineMessage class="h-60 w-full justify-start bg-gray-800 text-white" severity=" my-3">
-                    <pre>{{
-                        JSON.stringify(
-                            {
-                                MERCHANT_TRANS_ID: '7',
-                                SIGN_TIME: 1503638389658,
-                                'SIGN_STRING ': '5777e5ed6eda5b5cca3f56a90cf53e96'
-                            },
-                            undefined,
-                            2
-                        )
-                    }}</pre>
-                </InlineMessage>
+                <div class="h-60 w-full justify-start">
+                    <CodeBlock
+                        :code="requestCode"
+                        :highlightjs="true"
+                        :persistentCopyButton="true"
+                        lang="json"
+                        theme="atom-one-dark"
+                    >
+                    </CodeBlock>
+                </div>
             </TabPanel>
             <TabPanel header="Пример ответа от Мерчанта:">
-                <InlineMessage class="h-60 w-full justify-start" severity="info my-3">
-                    <pre>{{
-                        JSON.stringify(
-                            {
-                                ERROR: 0,
-                                ERROR_NOTE: 'Success',
-                                PARAMETERS: {
-                                    full_name: 'Test Test',
-                                    balance: '1000',
-                                    email: 'test@test.uz'
-                                }
-                            },
-                            undefined,
-                            2
-                        )
-                    }}</pre>
-                </InlineMessage>
+                <div class="h-60 w-full justify-start">
+                    <CodeBlock
+                        :code="responseCode"
+                        :highlightjs="true"
+                        :persistentCopyButton="true"
+                        lang="json"
+                        theme="atom-one-dark"
+                    >
+                    </CodeBlock>
+                </div>
             </TabPanel>
-        </TabView> 
+        </TabView>
     </div>
 </template>
 <style></style>

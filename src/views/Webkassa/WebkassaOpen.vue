@@ -1,8 +1,5 @@
 <script setup>
-import webkassaOpenExample from '@/views/Webkassa/webkassa_open.js';
-
-// import 'prism-es6/components/prism-php';
-// import 'prism-es6/components/prism-markup-templating';
+import code from '@/views/Webkassa/webkassa_open.js'; 
 const table = [
     {
         param: 'VENDOR_ID',
@@ -81,12 +78,12 @@ const table = [
             на URL-адрес. Для Вашего удобства все тестирование проходит в песочнице (sandbox) нашей
             системы.
         </p>
-        <InlineMessage severity="warn my-3"
+        <InlineMessage severity="warn my-2"
             >Тестовый режим предназначен для проведения тестовых транзакций и проверки корректности
             работы системы. https://agr.uz/sandbox</InlineMessage
         >
-        <p>Вы можете осуществить открытие Web-кассы в 3 этапа:</p>
-        <ul class="list-disc ml-5 my-4">
+        <p class="mt-4 mb-4">Вы можете осуществить открытие Web-кассы в 3 этапа:</p>
+        <ul class="list-disc ml-10 my-2">
             <li>собрать необходимые минимальные данные для осуществления платежа;</li>
             <li>рассчитать подпись (signature);</li>
             <li>
@@ -97,10 +94,12 @@ const table = [
         <h3 class="text-xl font-bold my-4">Минимальный набор параметров для открытия Web-кассы.</h3>
         <p>
             Для открытия Web-кассы Вам достаточно отправлять 7 обязательных параметров:
-            <PrimeChip class="m-1">VENDOR_ID</PrimeChip>, <PrimeChip class="m-1">MERCHANT_TRANS_ID</PrimeChip>,
+            <PrimeChip class="m-1">VENDOR_ID</PrimeChip>,
+            <PrimeChip class="m-1">MERCHANT_TRANS_ID</PrimeChip>,
             <PrimeChip class="m-1">MERCHANT_TRANS_AMOUNT</PrimeChip>,
             <PrimeChip class="m-1">MERCHANT_CURRENCY</PrimeChip>,
-            <PrimeChip class="m-1">MERCHANT_TRANS_NOTE</PrimeChip>, <PrimeChip class="m-1">SIGN_TIME</PrimeChip>,
+            <PrimeChip class="m-1">MERCHANT_TRANS_NOTE</PrimeChip>,
+            <PrimeChip class="m-1">SIGN_TIME</PrimeChip>,
             <PrimeChip class="m-1">SIGN_STRING</PrimeChip>,
         </p>
         <DataTable class="my-4 leading-5" :value="table" tableStyle="min-width: 50rem">
@@ -151,14 +150,14 @@ const table = [
         <h3 class="text-xl font-bold my-4">
             Примеры реализации запроса на языках программирования.
         </h3>
-        <div v-highlight>
-            <pre class="language-php">
-                <code>{{ webkassaOpenExample.trim() }}</code>
-            </pre>
-        </div>
-        <!-- <HighCode langName="php">
-            {{ webkassaOpenExample.trim() }}
-        </HighCode> -->
+        <CodeBlock
+            :code="code"
+            :highlightjs="true"
+            :persistentCopyButton="true"
+            lang="php"
+            theme="atom-one-dark"
+        >
+        </CodeBlock>
         <h3 class="text-xl font-bold my-4">Пример запроса.</h3>
         <InlineMessage severity="info my-3">
             <div>

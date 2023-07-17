@@ -15,7 +15,8 @@
     "vue": "^3.3.4",
     "vue-code-highlight": "^0.7.8",
     "vue-highlight-code": "^0.1.16",
-    "vue-router": "^4.2.2"
+    "vue-router": "^4.2.2",
+    "vue3-code-block": "^2.2.11"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",

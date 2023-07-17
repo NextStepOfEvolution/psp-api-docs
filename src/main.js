@@ -4,8 +4,6 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
 import PrimeVue from 'primevue/config';
-import 'primevue/resources/themes/tailwind-light/theme.css';
-import 'primeicons/primeicons.css';
 import Chip from 'primevue/chip';
 import Card from 'primevue/card';
 import Tag from 'primevue/tag';
@@ -15,9 +13,10 @@ import Column from 'primevue/column';
 import InlineMessage from 'primevue/inlinemessage';
 import TabPanel from 'primevue/tabpanel';
 import TabView from 'primevue/tabview';
-import vueCodeHighlight from 'vue-code-highlight';
-import 'vue-highlight-code/dist/style.css';
-import 'vue-code-highlight/themes/prism-coy.css';
+import CodeBlock from 'vue3-code-block';
+
+import 'primevue/resources/themes/tailwind-light/theme.css';
+import 'primeicons/primeicons.css';
 
 const app = createApp(App);
 app.component('PrimeChip', Chip) 
@@ -29,7 +28,7 @@ app.component('PrimeChip', Chip)
     .component('TabView', TabView)
     .component('TabPanel', TabPanel)
     .component('InlineMessage', InlineMessage)
+    .component('CodeBlock', CodeBlock)
     .use(router)
-    .use(vueCodeHighlight)
     .use(PrimeVue)
     .mount('#app');
