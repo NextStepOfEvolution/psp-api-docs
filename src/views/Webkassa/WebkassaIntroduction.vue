@@ -100,7 +100,7 @@ function imageClick(index) {
                 >
             </Card>
         </div>
-        <BlockPagination :next="{ label: 'webkassa-preparation', name: 'webkassa-preparation' }" />
+        <BlockPagination :next="{ label: 'Этап 1. Подготовка к интеграции', name: 'webkassa-preparation' }" />
     </div>
 </template>
 <style></style>
