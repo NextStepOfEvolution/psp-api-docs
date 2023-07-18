@@ -13,14 +13,16 @@ import Column from 'primevue/column';
 import InlineMessage from 'primevue/inlinemessage';
 import TabPanel from 'primevue/tabpanel';
 import TabView from 'primevue/tabview';
+import Button from 'primevue/button';
 import CodeBlock from 'vue3-code-block';
 import BlockPagination from '@/components/BlockPagination.vue';
+import LoaderComponent from '@/components/LoaderComponent.vue';
 
 import 'primevue/resources/themes/tailwind-light/theme.css';
 import 'primeicons/primeicons.css';
 
 const app = createApp(App);
-app.component('PrimeChip', Chip) 
+app.component('PrimeChip', Chip)
     .component('Galleria', Galleria)
     .component('Tag', Tag)
     .component('Card', Card)
@@ -31,6 +33,8 @@ app.component('PrimeChip', Chip)
     .component('InlineMessage', InlineMessage)
     .component('CodeBlock', CodeBlock)
     .component('BlockPagination', BlockPagination)
+    .component('Button', Button)
+    .component('LoaderComponent', LoaderComponent)
     .use(router)
     .use(PrimeVue)
     .mount('#app');

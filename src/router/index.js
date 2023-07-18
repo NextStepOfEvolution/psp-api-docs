@@ -46,51 +46,51 @@ const router = createRouter({
                 {
                     path: 'webkassa-merchant-api',
                     name: 'webkassa-merchant-api',
-                    component: () => import('@/views/Webkassa/WebkassaMerchantAPI.vue'),
-                    children: [
-                        {
-                            path: 'webkassa-merchant-api-info',
-                            name: 'webkassa-merchant-api-info',
-                            component: () =>
-                                import('@/views/Webkassa/MerchantAPI/MerchantAPIInfo.vue')
-                        },
-                        {
-                            path: 'webkassa-merchant-api-pay',
-                            name: 'webkassa-merchant-api-pay',
-                            component: () =>
-                                import('@/views/Webkassa/MerchantAPI/MerchantAPIPay.vue')
-                        },
-                        {
-                            path: 'webkassa-merchant-api-notify',
-                            name: 'webkassa-merchant-api-notify',
-                            component: () =>
-                                import('@/views/Webkassa/MerchantAPI/MerchantAPINotify.vue')
-                        },
-                        {
-                            path: 'webkassa-merchant-api-cancel',
-                            name: 'webkassa-merchant-api-cancel',
-                            component: () =>
-                                import('@/views/Webkassa/MerchantAPI/MerchantAPICancel.vue')
-                        },
-                        {
-                            path: 'webkassa-merchant-api-statement',
-                            name: 'webkassa-merchant-api-statement',
-                            component: () =>
-                                import('@/views/Webkassa/MerchantAPI/MerchantAPIStatement.vue')
-                        },
-                        {
-                            path: 'webkassa-merchant-api-status',
-                            name: 'webkassa-merchant-api-status',
-                            component: () =>
-                                import('@/views/Webkassa/MerchantAPI/MerchantAPIStatus.vue')
-                        },
-                        {
-                            path: 'webkassa-merchant-api-fiscalization',
-                            name: 'webkassa-merchant-api-fiscalization',
-                            component: () =>
-                                import('@/views/Webkassa/MerchantAPI/MerchantAPIFiscalization.vue')
-                        }
-                    ]
+                    component: () => import('@/views/Webkassa/WebkassaMerchantAPI.vue')
+                    // children: [
+                    //     {
+                    //         path: 'webkassa-merchant-api-info',
+                    //         name: 'webkassa-merchant-api-info',
+                    //         component: () =>
+                    //             import('@/views/Webkassa/MerchantAPI/MerchantAPIInfo.vue')
+                    //     },
+                    //     {
+                    //         path: 'webkassa-merchant-api-pay',
+                    //         name: 'webkassa-merchant-api-pay',
+                    //         component: () =>
+                    //             import('@/views/Webkassa/MerchantAPI/MerchantAPIPay.vue')
+                    //     },
+                    //     {
+                    //         path: 'webkassa-merchant-api-notify',
+                    //         name: 'webkassa-merchant-api-notify',
+                    //         component: () =>
+                    //             import('@/views/Webkassa/MerchantAPI/MerchantAPINotify.vue')
+                    //     },
+                    //     {
+                    //         path: 'webkassa-merchant-api-cancel',
+                    //         name: 'webkassa-merchant-api-cancel',
+                    //         component: () =>
+                    //             import('@/views/Webkassa/MerchantAPI/MerchantAPICancel.vue')
+                    //     },
+                    //     {
+                    //         path: 'webkassa-merchant-api-statement',
+                    //         name: 'webkassa-merchant-api-statement',
+                    //         component: () =>
+                    //             import('@/views/Webkassa/MerchantAPI/MerchantAPIStatement.vue')
+                    //     },
+                    //     {
+                    //         path: 'webkassa-merchant-api-status',
+                    //         name: 'webkassa-merchant-api-status',
+                    //         component: () =>
+                    //             import('@/views/Webkassa/MerchantAPI/MerchantAPIStatus.vue')
+                    //     },
+                    //     {
+                    //         path: 'webkassa-merchant-api-fiscalization',
+                    //         name: 'webkassa-merchant-api-fiscalization',
+                    //         component: () =>
+                    //             import('@/views/Webkassa/MerchantAPI/MerchantAPIFiscalization.vue')
+                    //     }
+                    // ]
                 },
                 {
                     path: 'webkassa-auto-test',
@@ -109,23 +109,20 @@ const router = createRouter({
     scrollBehavior(to, from, savedPosition) {
         if (to.hash) {
             // eslint-disable-next-line no-unused-vars
-            return new Promise((resolve, _reject) => {
-                setTimeout(() => {
-                    resolve({
-                        top: 80,
-                        el: to.hash,
-                        behavior: 'smooth'
-                    });
-                }, 100);
+            return new Promise((resolve, reject) => {
+                return resolve({
+                    top: 80,
+                    el: to.hash,
+                    behavior: 'smooth'
+                });
             });
         } else {
-            return new Promise((resolve, _reject) => {
-                setTimeout(() => {
-                    resolve({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                }, 100);
+            // eslint-disable-next-line no-unused-vars
+            return new Promise((resolve, reject) => {
+                return resolve({
+                    top: 0,
+                    behavior: 'smooth'
+                });
             });
         }
     }
