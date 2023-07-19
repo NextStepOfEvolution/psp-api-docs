@@ -28,13 +28,17 @@ body {
 .dark .p-datatable .p-datatable-tbody > tr:hover{
     background-color: rgba(215, 215, 240, 0.75) !important;
 }
-.p-tabview, .p-tabview-nav, .p-tabview-selected, .p-tabview-panels,.p-tabview-selected{
+.dark .p-tabview, 
+.dark .p-tabview-nav, 
+.dark .p-tabview-selected, 
+.dark .p-tabview-panels,
+.dark .p-tabview-selected{
     background-color: rgba(0, 0, 25, 0.85) !important;
 }
-.p-tabview-nav-link{
+.dark .p-tabview-nav-link{
     background-color: rgba(0, 0, 25, 0.85) !important;
 }
-[data-p-active="true"] .p-tabview-nav-link{
+.dark  [data-p-active="true"] .p-tabview-nav-link{
     color: var(--white) !important;
     background-color: rgba(69, 69, 218, 0.35) !important;
 }
