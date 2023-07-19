@@ -9,35 +9,42 @@ import MerchantAPICancel from './MerchantAPI/MerchantAPICancel.vue';
 import MerchantAPIStatement from './MerchantAPI/MerchantAPIStatement.vue';
 import MerchantAPIStatus from './MerchantAPI/MerchantAPIStatus.vue';
 import MerchantAPIFiscalization from './MerchantAPI/MerchantAPIFiscalization.vue';
-import { computed, onMounted } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import router from '../../router';
+// import router from '../../router';
 
 onMounted(() => {
     const headings = document.querySelectorAll('.link[id]');
     const currentRoute = computed(() => router.currentRoute);
     // eslint-disable-next-line no-unused-vars
+    if(router.currentRoute.value?.hash){
+        router.replace(router.currentRoute.value);
+    }
+    const isLocked = ref(false);
     document.addEventListener('scroll', (e) => {
-        for (let i = 0; i < headings.length; i++) {
-            const rect = headings[i].getBoundingClientRect(); 
-            let isVisable = rect.top < 80 && rect.bottom > 80;
-            if (isVisable) {
-                if (
-                    currentRoute.value.value?.hash == undefined ||
-                    currentRoute.value.value?.hash != '#' + headings[i].getAttribute('id')
-                ) {
-                    console.log(
-                        currentRoute.value.value?.hash,
-                        headings[i].getAttribute('id'),
-                        isVisable
-                    );
-                    router.replace({
-                        name: router.currentRoute.name,
-                        hash: '#' + headings[i].getAttribute('id')
-                    });
+        if(!isLocked.value){
+            isLocked.value = true
+            for (let i = 0; i < headings.length; i++) {
+                const rect = headings[i].getBoundingClientRect();
+                let isVisable = rect.top < 80 && rect.bottom > 80;
+                if (isVisable) {
+                    if (
+                        currentRoute.value.value?.hash == undefined ||
+                        currentRoute.value.value?.hash != '#' + headings[i].getAttribute('id')
+                    ) { 
+                        router.replace({
+                            name: router.currentRoute.name,
+                            hash: '#' + headings[i].getAttribute('id'),
+                            params: {
+                                scroll: false
+                            }
+                        });
+                    }
+                    break;
                 }
-                break;
             }
-        } 
+            isLocked.value = false;
+        }
     });
 });
 </script>
@@ -76,7 +83,10 @@ onMounted(() => {
             id="webkassa-merchant-api-fiscalization"
             :table="tables?.fiscalization"
         />
-        <BlockPagination :prev="{ label: 'Этап 2. Открытие Web-кассы', name: 'webkassa-open' }" />
+        <BlockPagination
+            :prev="{ label: 'Этап 2. Открытие Web-кассы', name: 'webkassa-open' }"
+            :next="{ label: 'Этап 4. Тестирование', name: 'webkassa-auto-test' }"
+        />
     </div>
 </template>
 <style></style>

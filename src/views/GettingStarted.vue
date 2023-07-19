@@ -10,7 +10,7 @@
               <template #header>
                   <img class="mx-auto" src="@/assets/images/tools/terminal.png" alt="Web-касса"/>
               </template>
-              <template #title><b><router-link :to="{name: 'webkassa'}">Web-касса</router-link></b></template> 
+              <template #title><b><router-link :to="{name: 'webkassa-introduction'}">Web-касса</router-link></b></template> 
               <template #content>
                 <p>Удобный способ принимать платежи.</p> 
               </template> 
@@ -19,7 +19,7 @@
               <template #header>
                   <img class="mx-auto" src="@/assets/images/tools/terminal.png" alt="Web-касса"/>
               </template>
-              <template #title><b>Web-терминал</b></template> 
+              <template #title><b><router-link :to="{name: 'web-terminal-introduce'}">Web-терминал</router-link></b></template> 
               <template #content>
                 <p>Легкий и быстрый способ начать принимать платежи от пользователей</p> 
               </template> 

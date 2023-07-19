@@ -1,7 +1,5 @@
 <script setup>
 import items from '@/router/sidebarItems.js';
-import { ref } from 'vue';
-import router from '../router';
 import SidebarItem from './SidebarItem.vue';
 </script>
 <template>
@@ -13,3 +11,11 @@ import SidebarItem from './SidebarItem.vue';
         </div>
     </aside>
 </template>
+<style>
+.sidebar-item .sidebar-item__childs{
+    display: none;
+}
+.sidebar-item:has(.active) .sidebar-item__childs{
+    display: block;
+}
+</style>

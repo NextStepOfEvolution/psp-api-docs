@@ -14,6 +14,7 @@ import InlineMessage from 'primevue/inlinemessage';
 import TabPanel from 'primevue/tabpanel';
 import TabView from 'primevue/tabview';
 import Button from 'primevue/button';
+import InputText from 'primevue/inputtext';
 import CodeBlock from 'vue3-code-block';
 import BlockPagination from '@/components/BlockPagination.vue';
 import LoaderComponent from '@/components/LoaderComponent.vue';
@@ -35,6 +36,7 @@ app.component('PrimeChip', Chip)
     .component('BlockPagination', BlockPagination)
     .component('Button', Button)
     .component('LoaderComponent', LoaderComponent)
+    .component('InputText', InputText)
     .use(router)
     .use(PrimeVue)
     .mount('#app');

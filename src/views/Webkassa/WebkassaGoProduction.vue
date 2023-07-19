@@ -2,7 +2,7 @@
 </script>
 <template>
     <div class="relative">
-        <h2 class="text-2xl font-bold my-4">Этап 4. Перевод в боевой режим.</h2>
+        <h2 class="text-2xl font-bold my-4">Этап 5. Перевод в боевой режим.</h2>
         <p class="my-2">
             Для перевода Web-кассы, Web-терминала или Host-терминала в боевой режим необходимо:
         </p>
@@ -22,6 +22,7 @@
         </ul>
         <BlockPagination class="absolute w-full bottom-[-100%]"
             :prev="{ label: 'Этап 4. Тестирование', name: 'webkassa-auto-test' }"
+            :next="{ label: 'Дополнительные возможности', name: 'webkassa-additional-features' }"
         />
     </div>
 </template>

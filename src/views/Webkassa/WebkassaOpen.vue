@@ -78,12 +78,12 @@ const table = [
             на URL-адрес. Для Вашего удобства все тестирование проходит в песочнице (sandbox) нашей
             системы.
         </p>
-        <InlineMessage severity="warn my-2"
+        <InlineMessage severity="warn"
             >Тестовый режим предназначен для проведения тестовых транзакций и проверки корректности
             работы системы. https://agr.uz/sandbox</InlineMessage
         >
         <p class="mt-4 mb-4">Вы можете осуществить открытие Web-кассы в 3 этапа:</p>
-        <ul class="list-disc ml-10 my-2">
+        <ul class="list-disc ml-10">
             <li>собрать необходимые минимальные данные для осуществления платежа;</li>
             <li>рассчитать подпись (signature);</li>
             <li>
@@ -110,7 +110,7 @@ const table = [
             <Column field="example" header="Пример"></Column>
         </DataTable>
         <h3 class="text-xl font-bold my-4">Пример запроса.</h3>
-        <InlineMessage severity="info my-3">
+        <InlineMessage severity="info my-2">
             <div>
                 <p>
                     <b>VENDOR_ID</b>=1591864 MERCHANT_TRANS_ID=AB772059 MERCHANT_TRANS_AMOUNT=1000
@@ -159,7 +159,7 @@ const table = [
         >
         </CodeBlock>
         <h3 class="text-xl font-bold my-4">Пример запроса.</h3>
-        <InlineMessage severity="info my-3">
+        <InlineMessage severity="info my-2">
             <div>
                 <p><b>VENDOR_ID</b>=1591864</p>
                 <p><b>MERCHANT_TRANS_ID</b>=AB772059</p>

@@ -67,7 +67,7 @@ function imageClick(index) {
 </script>
 <template>
     <div class="">
-        <h2 class="text-2xl font-bold my-4">Этап 5. Перевод в боевой режим</h2>
+        <h2 class="text-2xl font-bold my-4">Этап 4. Тестирование</h2>
         <p class="my-4">
             Тестирование API производиться в личном кабинете Мерчанта в разделе
             <PrimeChip class="my-1">Тестирование API поставщика</PrimeChip>.

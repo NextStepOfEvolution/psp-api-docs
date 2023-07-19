@@ -13,6 +13,28 @@
 html {
     font-size: 14px;
 }
-body { 
+body {
     padding: 0 calc(20px - (100vw - 100%)) 0 0;
+}
+
+.dark .p-datatable .p-datatable-thead > tr > th {
+    color: #fff;
+    background-color: rgb(0, 0, 25);
+}
+.dark .p-datatable .p-datatable-tbody > tr > td {
+    color: #fff;
+    background-color: rgba(0, 0, 25, 0.85);
+}
+.dark .p-datatable .p-datatable-tbody > tr:hover{
+    background-color: rgba(215, 215, 240, 0.75) !important;
+}
+.p-tabview, .p-tabview-nav, .p-tabview-selected, .p-tabview-panels,.p-tabview-selected{
+    background-color: rgba(0, 0, 25, 0.85) !important;
+}
+.p-tabview-nav-link{
+    background-color: rgba(0, 0, 25, 0.85) !important;
+}
+[data-p-active="true"] .p-tabview-nav-link{
+    color: var(--white) !important;
+    background-color: rgba(69, 69, 218, 0.35) !important;
 }

@@ -14,7 +14,7 @@ export default [
     {
         label: 'Web-касса',
         icon: 'pi pi-fw pi-file',
-        to: { name: 'webkassa' },
+        to: { name: 'webkassa-introduction' },
         childrens: [
             {
                 label: 'Общие сведения',
@@ -108,6 +108,43 @@ export default [
                 label: 'Этап 5. Перевод в боевой режим',
                 icon: 'pi pi-fw pi-plus',
                 to: { name: 'webkassa-goto-prodiction' }
+            },
+            {
+                label: 'Дополнительные возможности',
+                icon: 'pi pi-fw pi-plus',
+                to: { name: 'webkassa-additional-features' }
+            },
+            {
+                label: 'Ошибки',
+                icon: 'pi pi-fw pi-plus',
+                to: { name: 'webkassa-errors' }
+            }
+        ]
+    },
+    {
+        label: 'Web-терминал',
+        icon: 'pi pi-fw pi-plus',
+        to: { name: 'web-terminal-introduce' },
+        childrens: [
+            {
+                label: 'Общие сведения',
+                icon: 'pi pi-fw pi-plus',
+                to: { name: 'web-terminal-introduce' }
+            },
+            {
+                label: 'Этап 1. Подготовка к интеграции',
+                icon: 'pi pi-fw pi-plus',
+                to: { name: 'web-terminal-preparation' }
+            },
+            {
+                label: 'Этап 2. Открытие платежного Web-терминала',
+                icon: 'pi pi-fw pi-plus',
+                to: { name: 'web-terminal-opening' }
+            },
+            {
+                label: 'Дополнительные возможности',
+                icon: 'pi pi-fw pi-plus',
+                to: { name: 'web-terminal-additional-features' }
             }
         ]
     }

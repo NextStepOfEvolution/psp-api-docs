@@ -101,28 +101,63 @@ const router = createRouter({
                     path: 'webkassa-goto-prodiction',
                     name: 'webkassa-goto-prodiction',
                     component: () => import('@/views/Webkassa/WebkassaGoProduction.vue')
+                },
+                {
+                    path: 'webkassa-errors',
+                    name: 'webkassa-errors',
+                    component: () => import('@/views/Webkassa/ErrorsBlock.vue')
+                },
+                {
+                    path: 'webkassa-additional-features',
+                    name: 'webkassa-additional-features',
+                    component: () => import('@/views/Webkassa/AdditionalFeaturesPage.vue')
+                }
+            ]
+        },
+        {
+            path: '/web-terminal',
+            name: 'web-terminal',
+            component: () => import('@/views/WebTerminal/WebTerminalPage.vue'),
+            children: [
+                {
+                    path: 'web-terminal-introduce',
+                    name: 'web-terminal-introduce',
+                    component: () => import('@/views/WebTerminal/WebTerminalIntroducePage.vue')
+                },
+                {
+                    path: 'web-terminal-preparation',
+                    name: 'web-terminal-preparation',
+                    component: () => import('@/views/WebTerminal/WebTerminalPreparetion.vue')
+                },
+                {
+                    path: 'web-terminal-opening',
+                    name: 'web-terminal-opening',
+                    component: () => import('@/views/WebTerminal/WebTerminalOpening.vue')
+                },
+                {
+                    path: 'web-terminal-additional-features',
+                    name: 'web-terminal-additional-features',
+                    component: () => import('@/views/WebTerminal/AdditionalFeaturesPage.vue')
                 }
             ]
         }
     ],
     // eslint-disable-next-line no-unused-vars
     scrollBehavior(to, from, savedPosition) {
-        if (to.hash) {
+        if (to.hash) { 
             // eslint-disable-next-line no-unused-vars
+            console.log(to);
             return new Promise((resolve, reject) => {
-                return resolve({
-                    top: 80,
-                    el: to.hash,
-                    behavior: 'smooth'
-                });
+                setTimeout(() => {
+                    if(to.params?.scroll == undefined || (to.params?.scroll && to.params?.scroll == true)){ 
+                        resolve({ el: to.hash, left: 0, top: 80, behavior: 'smooth' });
+                    }
+                }, 200);
             });
         } else {
             // eslint-disable-next-line no-unused-vars
             return new Promise((resolve, reject) => {
-                return resolve({
-                    top: 0,
-                    behavior: 'smooth'
-                });
+                resolve({ left: 0, top: 0 });
             });
         }
     }
