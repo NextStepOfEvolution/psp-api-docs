@@ -1,4 +1,4 @@
-import{r as o,o as m,c,b as a,w as l,a as e,d as t,u as N,e as u}from"./index-afd8048a.js";const R=`<?php 
+import{r as o,o as m,c,b as a,w as l,a as e,d as t,u as N,e as u}from"./index-8fdf7ed5.js";const R=`<?php 
 // Generator of a terminal request URL as HTML button. PHP example.
 
 const URL = 'https://agr.uz/sandbox'; // Request target URL

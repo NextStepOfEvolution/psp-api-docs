@@ -1,4 +1,4 @@
-import{r as o,o as c,c as u,b as l,w as a,a as e,d as t,u as N,e as i}from"./index-afd8048a.js";const R=`<?php 
+import{r as o,o as c,c as u,b as l,w as a,a as e,d as t,u as N,e as i}from"./index-8fdf7ed5.js";const R=`<?php 
 // Generator of a terminal request URL as HTML button. PHP example.
 const URL = 'https://agr.uz/sandbox'; // Request target URL
 const SECRET_KEY = '#Feiz!ahdahweig7?Choot#3AiL6p--ooF6e'; // Your site SECRET_KEY

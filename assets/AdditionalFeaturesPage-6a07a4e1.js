@@ -1,4 +1,4 @@
-import{r as o,o as r,c as i,b as t,u as m,w as s,a as e,d as _}from"./index-afd8048a.js";const d=e("h2",{class:"text-2xl font-bold my-4"},"Дополнительные возможности",-1),h=e("h3",{class:"text-xl font-bold my-4"},"Web-касса iFrame",-1),p=e("p",{class:"my-4"}," iFrame - это режим работы стандартной Web-кассы, который позволяет отобразить окно Web-кассы внутри одного фрейма на Вашем Web сайте. ",-1),u=e("p",{class:"text-xl my-4"},[e("b",null,"Пример вставки iframe кода на странице.")],-1),N=`<!DOCTYPE html>
+import{r as o,o as r,c as i,b as t,u as m,w as s,a as e,d as _}from"./index-8fdf7ed5.js";const d=e("h2",{class:"text-2xl font-bold my-4"},"Дополнительные возможности",-1),h=e("h3",{class:"text-xl font-bold my-4"},"Web-касса iFrame",-1),p=e("p",{class:"my-4"}," iFrame - это режим работы стандартной Web-кассы, который позволяет отобразить окно Web-кассы внутри одного фрейма на Вашем Web сайте. ",-1),u=e("p",{class:"text-xl my-4"},[e("b",null,"Пример вставки iframe кода на странице.")],-1),N=`<!DOCTYPE html>
 <html>
     <head>
         <title></title>
