@@ -146,7 +146,6 @@ const router = createRouter({
     scrollBehavior(to, from, savedPosition) {
         if (to.hash) { 
             // eslint-disable-next-line no-unused-vars
-            console.log(to);
             return new Promise((resolve, reject) => {
                 setTimeout(() => {
                     if(to.params?.scroll == undefined || (to.params?.scroll && to.params?.scroll == true)){ 

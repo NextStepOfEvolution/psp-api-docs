@@ -147,4 +147,8 @@ function imageClick(index) {
         />
     </div>
 </template>
-<style></style>
+<style>
+    .p-tag{
+        font-size: 12px;
+    }
+</style>

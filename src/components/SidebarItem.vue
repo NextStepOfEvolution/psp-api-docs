@@ -24,7 +24,7 @@ const isActive = computed(() => {
         >
             {{ props.item.label }}
         </router-link>
-        <div class="relative sidebar-item__childs" v-if="props.item?.childrens">
+        <div class="relative sidebar-item__childs" v-if=" isActive && props.item?.childrens">
             <div
                 class="ml-5 aside-tree"
                 v-for="(children, index) in props.item?.childrens"
