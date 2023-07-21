@@ -6,41 +6,29 @@ import { onMounted, reactive, ref, watchEffect } from 'vue';
 import ToggleButton from 'primevue/togglebutton';
 import logoWhite from '@/assets/images/logo-white.png';
 import logoDefault from '@/assets/images/logo-blue.png';
-import sideBarItems from '@/router/sidebaritems.js';
 import PrimeSidebar from 'primevue/sidebar';
 
 const darkMode = ref(false);
+const mobileMenuIsActive = ref(false);
+const isLoaded = ref(false);
 const pt = reactive({
     root: { class: 'bg-purple-800' },
     icon: { class: { 'text-white': darkMode.value } }
 });
+
 darkMode.value = localStorage.getItem('mode') == 'dark' ? true : false;
 onMounted(() => {
     document.title = 'PSP API DOCS';
-    
+    setTimeout(() => {
+        isLoaded.value = true;
+    }, 800);
 });
 watchEffect(() => {
     localStorage.setItem('mode', darkMode.value ? 'dark' : 'light');
 });
-const mobileMenu = ref({});
-onMounted(() => {
-    // eslint-disable-next-line no-unused-vars
-    mobileMenu.value = sideBarItems.map((item, _index) => {
-        if (item?.childrens) {
-            item.items = item.childrens;
-        }
-        return item;
-    });
-});
-const mobileMenuIsActive = ref(false);
-const isLoaded = ref(false);
-onMounted(() => {
-    setTimeout(() => {
-        isLoaded.value = true;
-    }, 800)
-});
 </script>
 <template>
+    <Toast></Toast>
     <div v-if="isLoaded" :class="{ dark: darkMode }">
         <section class="dark:bg-gray-950 min-h-screen">
             <header class="sticky top-0 z-10">
@@ -48,7 +36,7 @@ onMounted(() => {
                     <Menubar :class="{ dark: darkMode, 'dark:bg-gray-800': darkMode }" :model="[]">
                         <template #start>
                             <div class="flex">
-                                <div class="">
+                                <div class="psp-logo">
                                     <img
                                         class="mr-2 w-24"
                                         alt="PSP"
@@ -64,8 +52,8 @@ onMounted(() => {
                                             mobileMenuIsActive = true;
                                         }
                                     "
-                                    ><i class="pi pi-book"></i></Button
-                                >
+                                    ><i class="pi pi-book"></i
+                                ></Button>
                             </div>
                         </template>
                         <template #end>
@@ -92,21 +80,43 @@ onMounted(() => {
                     class="block md:hidden"
                     v-model:visible="mobileMenuIsActive"
                     :position="'full'"
-                > 
+                >
                     <SideBar
                         class="w-full dark:bg-gray-700 border-r-4 border-gray-100 pr-2 py-2 px-1 h-100"
                     />
                 </PrimeSidebar>
-                <ContentBlock :class="['w-full md:w-3/4 p-5 w-100', mobileMenuIsActive ? 'overflow-hiddem' : '' ]" />
+                <ContentBlock
+                    :class="[
+                        'w-full md:w-3/4 p-5 w-100',
+                        mobileMenuIsActive ? 'overflow-hiddem' : ''
+                    ]"
+                />
             </div>
         </section>
     </div>
-    <LoaderComponent v-else/>
+    <LoaderComponent v-else />
 </template>
 <style>
 .p-menubar {
     border-top: none !important;
     border-right: none !important;
     border-left: none !important;
+} 
+@keyframes bounce {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(0, 15px, 0);
+    }
+}
+.psp-logo{
+    transition: all ease;
+}
+.psp-logo:hover {
+    animation: bounce 1s;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+    animation-iteration-count: infinite;
 }
 </style>

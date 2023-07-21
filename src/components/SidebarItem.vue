@@ -3,19 +3,21 @@ import { computed } from 'vue';
 import router from '../router';
 
 const props = defineProps({
-    item: Object
+    item: Object,
+    active: Boolean
 });
 const currentRoute = router.currentRoute;
 const isActive = computed(() => {
-    return (
-        props.item.to.name == currentRoute.value.name &&
-        (currentRoute.value?.hash == '' || currentRoute.value?.hash == props.item.to.hash)
+    return props.item?.to?.name == null || (  
+        props.item?.to?.name == currentRoute.value.name &&
+        (currentRoute.value?.hash == '' || currentRoute.value?.hash == props?.item?.to.hash)
     );
 });
 </script>
 <template>
-    <div class="sidebar-item">
-        <router-link
+    <div :class="{ 'sidebar-item': true, active: props.active }"> 
+        <router-link 
+            v-if="props.item?.to"
             :to="props.item.to"
             :class="[
                 isActive ? 'active bg-purple-100 bg-gray-300 text-gray-900 dark:text-gray-900' : '',
@@ -24,13 +26,19 @@ const isActive = computed(() => {
         >
             {{ props.item.label }}
         </router-link>
-        <div class="relative sidebar-item__childs" v-if=" isActive && props.item?.childrens">
+        <div class="m-0.5 p-1.5" v-else>
+            {{ props.item.label }}
+        </div>
+        <div
+            class="relative sidebar-item__childs"
+            v-if="(isActive || props.active) && props.item?.childrens"
+        >
             <div
                 class="ml-5 aside-tree"
                 v-for="(children, index) in props.item?.childrens"
                 :key="index"
             >
-                <SidebarItem :item="children" />
+                <SidebarItem :active="props.active" :item="children" />
             </div>
         </div>
     </div>

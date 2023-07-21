@@ -140,15 +140,47 @@ const router = createRouter({
                     component: () => import('@/views/WebTerminal/AdditionalFeaturesPage.vue')
                 }
             ]
+        },
+        {
+            path: '/market-pay',
+            name: 'market-pay',
+            component: () => import('@/views/MarketPay/MarketPayPage.vue'),
+            children: [
+                {
+                    path: 'market-pay-concept',
+                    name: 'market-pay-concept',
+                    component: () => import('@/views/MarketPay/MarketPayConceptPage.vue')
+                },
+                {
+                    path: 'subvendor-management',
+                    name: 'market-pay-subvendor-management',
+                    component: () => import('@/views/MarketPay/SubvendorManagementPage.vue'),
+                    children: [
+                        {
+                            path: 'register-subvendor',
+                            name: 'market-pay-subvendor-register',
+                            component: () => import('@/views/MarketPay/RegisterSubvendorPage.vue')
+                        }, 
+                        {
+                            path: 'update-subvendor',
+                            name: 'market-pay-subvendor-update',
+                            component: () => import('@/views/MarketPay/UpdateSubvendorPage.vue')
+                        }, 
+                    ]
+                }
+            ]
         }
     ],
     // eslint-disable-next-line no-unused-vars
     scrollBehavior(to, from, savedPosition) {
-        if (to.hash) { 
+        if (to.hash) {
             // eslint-disable-next-line no-unused-vars
             return new Promise((resolve, reject) => {
                 setTimeout(() => {
-                    if(to.params?.scroll == undefined || (to.params?.scroll && to.params?.scroll == true)){ 
+                    if (
+                        to.params?.scroll == undefined ||
+                        (to.params?.scroll && to.params?.scroll == true)
+                    ) {
                         resolve({ el: to.hash, left: 0, top: 80, behavior: 'smooth' });
                     }
                 }, 200);

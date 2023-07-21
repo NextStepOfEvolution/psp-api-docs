@@ -18,12 +18,17 @@ import InputText from 'primevue/inputtext';
 import CodeBlock from 'vue3-code-block';
 import BlockPagination from '@/components/BlockPagination.vue';
 import LoaderComponent from '@/components/LoaderComponent.vue';
+import Toast from 'primevue/toast';
+import ToastService from 'primevue/toastservice';
+import ClipBoard from '@/components/ClipBoard.vue';
 
 import 'primevue/resources/themes/tailwind-light/theme.css';
 import 'primeicons/primeicons.css';
-
 const app = createApp(App);
-app.component('PrimeChip', Chip)
+app.use(router)
+    .use(ToastService)
+    .use(PrimeVue)
+    .component('PrimeChip', Chip)
     .component('Galleria', Galleria)
     .component('Tag', Tag)
     .component('Card', Card)
@@ -37,6 +42,7 @@ app.component('PrimeChip', Chip)
     .component('Button', Button)
     .component('LoaderComponent', LoaderComponent)
     .component('InputText', InputText)
-    .use(router)
-    .use(PrimeVue)
+    .component('Toast', Toast)
+    .component('ClipBoard', ClipBoard)
+
     .mount('#app');
