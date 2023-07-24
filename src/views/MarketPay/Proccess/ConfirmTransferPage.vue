@@ -2,23 +2,10 @@
 const confirmTransferRequestTable = {
     data: [
         {
-            property: 'transaction_id',
+            property: 'transfer_id',
             type: 'INTEGER',
             required: '+',
-            description:
-                'ID транзакции, переданный в ответе метода marketplace.pay или marketplace.confirm_pay'
-        },
-        {
-            property: 'org_account',
-            type: 'STRING',
-            required: '+',
-            description: 'Банковский р/с под мерчанта'
-        },
-        {
-            property: 'org_mfo',
-            type: 'STRING',
-            required: '+',
-            description: 'МФО банка под мерчанта'
+            description: 'ID захолдированного перевода'
         }
     ],
     columns: {
@@ -31,8 +18,14 @@ const confirmTransferRequestTable = {
 const confirmTransferResponseTable = {
     data: [
         {
-            property: 'payment_number',
+            property: 'id',
             type: 'INTEGER',
+            required: '+',
+            description: 'ID захолдированного перевода'
+        },
+        {
+            property: 'payment_number',
+            type: 'STRING',
             required: '+',
             description: 'Номер реквизитной транзакции'
         },
@@ -41,13 +34,13 @@ const confirmTransferResponseTable = {
             type: 'INTEGER',
             required: '+',
             description:
-                'Статус реквизитной транзакции -1 - ошбика. Обратитесь в службу поддержки PSP. 1 - в ожидании. Будет автоматически проведена повторная попытка перевода. 2 - завершено.'
+                'Статус реквизитной транзакции \n-1 - ошбика. Обратитесь в службу поддержки PSP. \n1 - в ожидании. Будет автоматически проведена повторная попытка перевода. \n2 - завершено.'
         },
         {
-            property: '1629000',
+            property: 'amount',
             type: 'INTEGER',
             required: '+',
-            description: 'Сумма поступления на счет под мерчанта в тийинах.'
+            description: '	Сумма поступления на счет под мерчанта в тийинах.'
         }
     ],
     columns: {
@@ -58,9 +51,9 @@ const confirmTransferResponseTable = {
     }
 };
 const confirmTransferPayRequestExampleCode =
-    '{  "id": 25,  "method": "marketplace.confirm_transfer",  "params": {    "transaction_id": "2224168",    "org_account": "20208033800590850000",    "org_mfo": "01100"  }}';
+    '{    "id":25,    "method":"marketplace.confirm_transfer",    "params": {        "transfer_id": 16    }}';
 const confirmTransferPayResponseExampleCode =
-    '{  "error": null,  "result": {    "details": {      "payment_number": "f90046713473982df67b7874c1ad0fa3",      "payment_status": 2,      "amount": "1629000"    }  }}';
+    '{  "error": null,  "result": {    "details": {      "id": 16,      "payment_number": "f90046713473982df67b7874c1ad0fa3",      "payment_status": 2,      "amount": "1629000"    }  }}';
 </script>
 <template>
     <div class="">

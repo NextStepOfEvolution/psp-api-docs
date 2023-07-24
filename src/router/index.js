@@ -154,27 +154,27 @@ const router = createRouter({
                 {
                     path: 'subvendor-management',
                     name: 'market-pay-subvendor-management',
-                    component: () => import('@/views/MarketPay/SubvendorManagementPage.vue'),
+                    component: () => import('@/views/MarketPay/Subvendor/SubvendorManagementPage.vue'),
                     children: [
                         {
                             path: 'register-subvendor',
                             name: 'market-pay-subvendor-register',
-                            component: () => import('@/views/MarketPay/RegisterSubvendorPage.vue')
+                            component: () => import('@/views/MarketPay/Subvendor/RegisterSubvendorPage.vue')
                         },
                         {
                             path: 'update-subvendor',
                             name: 'market-pay-subvendor-update',
-                            component: () => import('@/views/MarketPay/UpdateSubvendorPage.vue')
+                            component: () => import('@/views/MarketPay/Subvendor/UpdateSubvendorPage.vue')
                         },
                         {
                             path: 'confirm-subvendor',
                             name: 'market-pay-subvendor-confirm',
-                            component: () => import('@/views/MarketPay/ConfirmSubvendorPage.vue')
+                            component: () => import('@/views/MarketPay/Subvendor/ConfirmSubvendorPage.vue')
                         },
                         {
                             path: 'subvendor-list',
                             name: 'market-pay-subvendor-list',
-                            component: () => import('@/views/MarketPay/SubvendorListPage.vue')
+                            component: () => import('@/views/MarketPay/Subvendor/SubvendorListPage.vue')
                         }
                     ]
                 },

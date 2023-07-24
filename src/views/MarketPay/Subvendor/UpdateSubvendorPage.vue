@@ -1,15 +1,27 @@
 <script setup>
-
-const updateSubvendorRequestCode = '{"id":25,"method":"marketplace.update_sub_vendor","params":{"subvendor_id":10,"vendor_id":101494,"org_address":"CHANGED STREET NAME","vendor_commission":{"type":"procent","commission": 10}}}';
-const updateSubvendorResponseCode = '{"error": null,"result": {"subvendor_id":10,"vendor_id":101494,"org_account":"20208033800590850000","org_inn":"490080000","org_mfo":"01100","org_bank":"Bank name","org_title":"OOО «TITLE MERCHANT»","org_address":"CHANGED STREET NAME","org_phone": "998901234567","user_commission":{"type":"procent","commission": 5},"commission_payer": "vendor"},"id": 25,"mx_id": "b94312ac5772e39389ba8c50c205ff33"}';
+const updateSubvendorRequestCode =
+    '{"id":25,"method":"marketplace.update_sub_vendor","params":{"subvendor_id":10,"vendor_id":101494,"org_address":"CHANGED STREET NAME","vendor_commission":{"type":"procent","commission": 10}}}';
+const updateSubvendorResponseCode =
+    '{  "error": null,  "result": {    "subvendor_id": 10,    "vendor_id": 101494,    "org_account": "20208033800590850000",    "org_inn": "490080000",    "org_mfo": "01100",    "org_bank": "Bank name",    "org_title": "OOО «TITLE MERCHANT»",    "org_address": "CHANGED STREET NAME",    "org_phone": "998901234567",    "user_commission": {      "type": "procent",      "commission": 5    },    "commission_payer": "vendor"  },  "id": 25}';
 const updateSubvendorRequestTable = {
     data: [
-        { property: 'vendor_id', type: 'Integer', isRequired: '+', description: 'ID мерчанта' },
-        { property: 'org_account', type: 'String', isRequired: '+', description: 'Расчетный счет' },
-        { property: 'org_inn', type: 'String', isRequired: '+', description: 'ИНН' },
-        { property: 'org_mfo', type: 'String', isRequired: '+', description: 'МФО' },
+        {
+            property: 'subvendor_id',
+            type: 'Integer',
+            isRequired: '+',
+            description: 'ID под мерчанта в биллинге'
+        },
+        {
+            property: 'vendor_id',
+            type: 'Integer',
+            isRequired: '-',
+            description: 'ID мерчанта маркетплейса'
+        },
+        { property: 'org_account', type: 'String', isRequired: '-', description: 'Расчетный счет' },
+        { property: 'org_inn', type: 'String', isRequired: '-', description: 'ИНН' },
+        { property: 'org_mfo', type: 'String', isRequired: '-', description: 'МФО' },
         { property: 'org_bank', type: 'String', isRequired: '-', description: 'Банк' },
-        { property: 'org_title', type: 'String', isRequired: '+', description: 'Названия' },
+        { property: 'org_title', type: 'String', isRequired: '-', description: 'Названия' },
         { property: 'org_address', type: 'String', isRequired: '-', description: 'Адрес' },
         { property: 'org_phone', type: 'String', isRequired: '-', description: 'Телефон' },
         {
@@ -34,8 +46,12 @@ const updateSubvendorRequestTable = {
 };
 const updateSubvendorResponseTable = {
     data: [
-        { property: 'agr_sub_vendor_id', type: 'Integer', description: 'ID мерчанта' }, 
-        { property: 'commission_payer', type: 'String', description: 'Инфомационный параметр. Плательщик комиссии' }, 
+        { property: 'agr_sub_vendor_id', type: 'Integer', description: 'ID мерчанта' },
+        {
+            property: 'commission_payer',
+            type: 'String',
+            description: 'Инфомационный параметр. Плательщик комиссии'
+        }
     ],
     columns: {
         property: 'Свойство',
@@ -46,10 +62,8 @@ const updateSubvendorResponseTable = {
 </script>
 <template>
     <div class="">
-        <h2 class="text-2xl font-bold my-2">Редактирование саб мерчанта</h2> 
-        <p class="my-4">
-            Данный метод изменяет данные зарегистированного под мерчанта.
-        </p>
+        <h2 class="text-2xl font-bold my-2">Редактирование саб мерчанта</h2>
+        <p class="my-4">Данный метод изменяет данные зарегистированного под мерчанта.</p>
         <p class="my-4">
             Название метода
             <PrimeChip

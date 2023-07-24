@@ -64,7 +64,7 @@ const subvendorListResponseTable = {
 };
 const subvendorListRequestCodeExample = '{"id":25,"method":"marketplace.sub_vendors_list"}';
 const subvendorListResponseCodeExample =
-    '{"error": null,"result": [{"subvendor_id":10,"vendor_id":101494,"org_account":"20208033800590850000","org_inn":"490080000","org_mfo":"01100","org_bank":"Bank name","org_title":"OOО «TITLE MERCHANT»","org_address":"CHANGED STREET NAME","org_phone": "998901234567","vendor_commission":{"type":"procent","commission": 10}}],"id": 25,"mx_id": "b94312ac5772e39389ba8c50c205ff33"}';
+    '{"error": null,"result": [{"subvendor_id":10,"vendor_id":101494,"org_account":"20208033800590850000","org_inn":"490080000","org_mfo":"01100","org_bank":"Bank name","org_title":"OOО «TITLE MERCHANT»","org_address":"CHANGED STREET NAME","org_phone": "998901234567","vendor_commission":{"type":"procent","commission": 10}}],"id": 25}';
 </script>
 <template>
     <div class="">

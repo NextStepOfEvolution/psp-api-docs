@@ -1,10 +1,17 @@
 <script setup>
-
-const registerSubvendorRequestCode = '{"id":25,"method":"marketplace.register_sub_vendor","params":{"subvendor_id":10,"vendor_id":101494,"org_account":"20208033800590850000","org_inn":"490080000","org_mfo":"01100","org_bank":"Bank name","org_title":"OOО «TITLE MERCHANT»","org_address":"STREET NAME","org_phone": "998901234567","vendor_commission":{"type":"procent","commission": 5},"user_commission":{"type":"fix","commission": 500000}}}';
-const registerSubvendorResponseCode = '{"error": null,"result": {"agr_sub_vendor_id": 10,"commission_payer": "user"},"id": 25,"mx_id": "b94312ac5772e39389ba8c50c205ff33"}';
+const registerSubvendorRequestCode =
+    '{    "id":25,    "method":"marketplace.register_sub_vendor",    "params":{        "subvendor_id":10,        "vendor_id":101494,        "org_account":"20208033800590850000",        "org_inn":"490080000",        "org_mfo":"01100",        "org_bank":"Bank name",        "org_title":"OOО «TITLE MERCHANT»",        "org_address":"STREET NAME",        "org_phone": "998901234567",        "vendor_commission":{            "type":"procent",            "commission": 5        },        "user_commission":{            "type":"fix",            "commission": 500000        }    }}';
+const registerSubvendorResponseCode =
+    '{  "error": null,  "result": {    "agr_sub_vendor_id": 10,    "commission_payer": "user"  },  "id": 25}';
 const registerSubvendorRequestTable = {
     data: [
         { property: 'vendor_id', type: 'Integer', isRequired: '+', description: 'ID мерчанта' },
+        {
+            property: 'subvendor_id',
+            type: 'Integer',
+            isRequired: '+',
+            description: 'ID под мерчанта в биллинге'
+        },
         { property: 'org_account', type: 'String', isRequired: '+', description: 'Расчетный счет' },
         { property: 'org_inn', type: 'String', isRequired: '+', description: 'ИНН' },
         { property: 'org_mfo', type: 'String', isRequired: '+', description: 'МФО' },
@@ -16,13 +23,13 @@ const registerSubvendorRequestTable = {
             property: 'vendor_commission',
             type: 'OBJECT',
             isRequired: '+',
-            description: "type - ['procent', 'fix'] тип комиссий commission - Значение комиссий"
+            description: "type - ['procent', 'fix'] тип комиссий, commission - Значение комиссий"
         },
         {
             property: 'user_commission',
             type: 'OBJECT',
             isRequired: '+',
-            description: "type - ['procent', 'fix'] тип комиссий commission - Значение комиссий"
+            description: "type - ['procent', 'fix'] тип комиссий, commission - Значение комиссий"
         }
     ],
     columns: {
@@ -34,8 +41,12 @@ const registerSubvendorRequestTable = {
 };
 const registerSubvendorResponseTable = {
     data: [
-        { property: 'agr_sub_vendor_id', type: 'Integer', description: 'ID мерчанта' }, 
-        { property: 'commission_payer', type: 'String', description: 'Инфомационный параметр. Плательщик комиссии' }, 
+        { property: 'agr_sub_vendor_id', type: 'Integer', description: 'ID мерчанта' },
+        {
+            property: 'commission_payer',
+            type: 'String',
+            description: 'Инфомационный параметр. Плательщик комиссии'
+        }
     ],
     columns: {
         property: 'Свойство',
@@ -46,7 +57,7 @@ const registerSubvendorResponseTable = {
 </script>
 <template>
     <div class="">
-        <h2 class="text-2xl font-bold my-2">Регистрации саб мерчанта</h2> 
+        <h2 class="text-2xl font-bold my-2">Регистрации саб мерчанта</h2>
         <p class="my-4">
             Данный метод регистрирует под мерчанта, в случае передачи некорректного параметра, метод
             возвращает ошибку.
