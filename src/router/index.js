@@ -160,12 +160,80 @@ const router = createRouter({
                             path: 'register-subvendor',
                             name: 'market-pay-subvendor-register',
                             component: () => import('@/views/MarketPay/RegisterSubvendorPage.vue')
-                        }, 
+                        },
                         {
                             path: 'update-subvendor',
                             name: 'market-pay-subvendor-update',
                             component: () => import('@/views/MarketPay/UpdateSubvendorPage.vue')
-                        }, 
+                        },
+                        {
+                            path: 'confirm-subvendor',
+                            name: 'market-pay-subvendor-confirm',
+                            component: () => import('@/views/MarketPay/ConfirmSubvendorPage.vue')
+                        },
+                        {
+                            path: 'subvendor-list',
+                            name: 'market-pay-subvendor-list',
+                            component: () => import('@/views/MarketPay/SubvendorListPage.vue')
+                        }
+                    ]
+                },
+                {
+                    path: 'proccess',
+                    name: 'market-pay-proccess',
+                    component: () => import('@/views/MarketPay/Proccess/ProccessPage.vue'),
+                    children: [
+                        {
+                            path: 'market-pay-proccess-prepare',
+                            name: 'market-pay-proccess-prepare',
+                            component: () => import('@/views/MarketPay/Proccess/PreparePayPage.vue')
+                        },
+                        {
+                            path: 'market-pay-proccess-confirm',
+                            name: 'market-pay-proccess-confirm',
+                            component: () => import('@/views/MarketPay/Proccess/ConfirmPayPage.vue')
+                        },
+                        {
+                            path: 'market-pay-proccess-pay',
+                            name: 'market-pay-proccess-pay',
+                            component: () => import('@/views/MarketPay/Proccess/PayPage.vue')
+                        },
+                        {
+                            path: 'market-pay-proccess-pay',
+                            name: 'market-pay-proccess-pay',
+                            component: () => import('@/views/MarketPay/Proccess/PayPage.vue')
+                        },
+                        {
+                            path: 'market-pay-proccess-confirm-transfer',
+                            name: 'market-pay-proccess-confirm-transfer',
+                            component: () =>
+                                import('@/views/MarketPay/Proccess/ConfirmTransferPage.vue')
+                        },
+                        {
+                            path: 'market-pay-proccess-reverse',
+                            name: 'market-pay-proccess-reverse',
+                            component: () =>
+                                import('@/views/MarketPay/Proccess/ReverseTransaction.vue')
+                        }
+                    ]
+                },
+                {
+                    path: 'card',
+                    name: 'market-pay-card',
+                    component: () => import('@/views/MarketPay/Card/CardPage.vue'),
+                    children: [
+                        {
+                            path: 'market-pay-card-registration',
+                            name: 'market-pay-card-registration',
+                            component: () =>
+                                import('@/views/MarketPay/Card/CardRegistration.vue')
+                        },
+                        {
+                            path: 'market-pay-card-confirmation',
+                            name: 'market-pay-card-confirmation',
+                            component: () =>
+                                import('@/views/MarketPay/Card/CardConfirmation.vue')
+                        },
                     ]
                 }
             ]

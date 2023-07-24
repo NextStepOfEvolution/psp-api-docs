@@ -1,22 +1,28 @@
 <script setup>
 import { computed } from 'vue';
 import router from '../router';
-
+import sidebarMenu from '@/router/sidebarItems.js';
 const props = defineProps({
-    item: Object,
-    active: Boolean
+    item: Object
 });
 const currentRoute = router.currentRoute;
 const isActive = computed(() => {
-    return props.item?.to?.name == null || (  
-        props.item?.to?.name == currentRoute.value.name &&
-        (currentRoute.value?.hash == '' || currentRoute.value?.hash == props?.item?.to.hash)
+    return (
+        props.item?.to?.name == null ||
+        (props.item?.to?.name == currentRoute.value.name &&
+            (currentRoute.value?.hash == '' || currentRoute.value?.hash == props?.item?.to.hash))
     );
 });
+const inActiveTree = computed(() => { 
+    const tree = sidebarMenu.findTree(
+        currentRoute.value.name
+    ); 
+    return tree.includes(props.item.to?.name); 
+});
 </script>
-<template>
-    <div :class="{ 'sidebar-item': true, active: props.active }"> 
-        <router-link 
+<template> 
+    <div :class="{ 'sidebar-item': true, active: inActiveTree }">
+        <router-link
             v-if="props.item?.to"
             :to="props.item.to"
             :class="[
@@ -31,14 +37,14 @@ const isActive = computed(() => {
         </div>
         <div
             class="relative sidebar-item__childs"
-            v-if="(isActive || props.active) && props.item?.childrens"
+            v-if="(isActive || inActiveTree) && props.item?.childrens"
         >
             <div
                 class="ml-5 aside-tree"
                 v-for="(children, index) in props.item?.childrens"
                 :key="index"
             >
-                <SidebarItem :active="props.active" :item="children" />
+                <SidebarItem :item="children" />
             </div>
         </div>
     </div>

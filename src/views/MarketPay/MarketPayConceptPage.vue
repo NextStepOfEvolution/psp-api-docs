@@ -258,5 +258,8 @@ const errorsListTable = {
             >
             </Column>
         </DataTable>
+        <BlockPagination
+            :next="{ label: 'Управление саб мерчантами', name: 'market-pay-subvendor-register' }"
+        />
     </div>
 </template>

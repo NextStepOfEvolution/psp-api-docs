@@ -46,7 +46,7 @@ const updateSubvendorResponseTable = {
 </script>
 <template>
     <div class="">
-        <h2 class="text-2xl font-bold my-2">Редактирование сабвендора</h2> 
+        <h2 class="text-2xl font-bold my-2">Редактирование саб мерчанта</h2> 
         <p class="my-4">
             Данный метод изменяет данные зарегистированного под мерчанта.
         </p>
@@ -108,5 +108,9 @@ const updateSubvendorResponseTable = {
             theme="atom-one-dark"
         >
         </CodeBlock>
+        <BlockPagination
+            :prev="{ label: 'Управление саб мерчантами', name: 'market-pay-subvendor-register' }"
+            :next="{ label: 'Подтверждение саб мерчанта', name: 'market-pay-subvendor-confirm' }"
+        />
     </div>
 </template>

@@ -46,7 +46,7 @@ const registerSubvendorResponseTable = {
 </script>
 <template>
     <div class="">
-        <h2 class="text-2xl font-bold my-2">Регистрации сабвендора</h2> 
+        <h2 class="text-2xl font-bold my-2">Регистрации саб мерчанта</h2> 
         <p class="my-4">
             Данный метод регистрирует под мерчанта, в случае передачи некорректного параметра, метод
             возвращает ошибку.
@@ -109,5 +109,9 @@ const registerSubvendorResponseTable = {
             theme="atom-one-dark"
         >
         </CodeBlock>
+        <BlockPagination
+            :prev="{ label: 'Конценп API', name: 'market-pay-concept' }"
+            :next="{ label: 'Редактирование саб мерчанта', name: 'market-pay-subvendor-update' }"
+        />
     </div>
 </template>

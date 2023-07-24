@@ -1,6 +1,6 @@
 export default {
     findTree: function (name) {
-        function hasName(name, item) { 
+        function hasName(name, item) {
             let found = [];
             if (item?.to?.name == name) {
                 found.push(item.to.name);
@@ -189,22 +189,81 @@ export default {
                     to: { name: 'market-pay-concept' }
                 },
                 {
-                    label: 'Управление поставщиками',
+                    label: 'Управление саб мерчантами',
                     icon: 'pi pi-fw pi-plus',
                     to: { name: 'market-pay-subvendor-register' },
                     childrens: [
                         {
-                            label: 'Создание сабвендора',
+                            label: 'Создание саб мерчанта',
                             icon: 'pi pi-fw pi-plus',
                             to: { name: 'market-pay-subvendor-register' }
-                        }, 
+                        },
                         {
-                            label: 'Редактирование сабвендора',
+                            label: 'Редактирование саб мерчанта',
                             icon: 'pi pi-fw pi-plus',
                             to: { name: 'market-pay-subvendor-update' }
-                        }, 
+                        },
+                        {
+                            label: 'Подтверждение саб мерчанта',
+                            icon: 'pi pi-fw pi-plus',
+                            to: { name: 'market-pay-subvendor-confirm' }
+                        },
+                        {
+                            label: 'Получение списка саб мерчантов',
+                            icon: 'pi pi-fw pi-plus',
+                            to: { name: 'market-pay-subvendor-list' }
+                        }
                     ]
-                } 
+                },
+                {
+                    label: 'Сохранение карты',
+                    icon: 'pi pi-fw pi-plus',
+                    to: { name: 'market-pay-card-registration' },
+                    childrens: [
+                        {
+                            label: 'Запрос на регистрацию карты',
+                            icon: 'pi pi-fw pi-plus',
+                            to: { name: 'market-pay-card-registration' }
+                        },
+                        {
+                            label: 'Подтверждение карты',
+                            icon: 'pi pi-fw pi-plus',
+                            to: { name: 'market-pay-card-confirmation' }
+                        }
+                    ]
+                },
+                {
+                    label: 'Проведение оплаты',
+                    icon: 'pi pi-fw pi-plus',
+                    to: { name: 'market-pay-proccess-prepare' },
+                    childrens: [
+                        {
+                            label: 'Подготовка транзакции оплаты',
+                            icon: 'pi pi-fw pi-plus',
+                            to: { name: 'market-pay-proccess-prepare' }
+                        },
+                        {
+                            label: 'Подтверждение подготовленной транзакции оплаты',
+                            icon: 'pi pi-fw pi-plus',
+                            to: { name: 'market-pay-proccess-confirm' }
+                        },
+                        {
+                            label: 'Оплата с сохраненной картой',
+                            icon: 'pi pi-fw pi-plus',
+                            to: { name: 'market-pay-proccess-pay' }
+                        },
+                        {
+                            label: 'Подтверждение захолдированной транзакции',
+                            icon: 'pi pi-fw pi-plus',
+                            to: { name: 'market-pay-proccess-confirm-transfer' }
+                        },
+                        {
+                            label: 'Отмена захолдированной транзакции',
+                            icon: 'pi pi-fw pi-plus',
+                            to: { name: 'market-pay-proccess-reverse' }
+                        }
+                    ]
+                }
             ]
         }
     ]
