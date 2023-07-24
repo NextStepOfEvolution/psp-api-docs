@@ -79,8 +79,7 @@ const subvendorListResponseCodeExample =
                 <ClipBoard
                     successMessage="Название метода скопированно"
                     errorMessage="Ошибка при копировании"
-                    >marketplace.sub_vendors_list
-                </ClipBoard>
+                    >marketplace.sub_vendors_list</ClipBoard>
             </PrimeChip>
         </p>
         <p class="my-4">Если тело params передано пустым, возвращаются все под мерчанты.</p>
