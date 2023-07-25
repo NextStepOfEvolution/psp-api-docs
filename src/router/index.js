@@ -120,25 +120,47 @@ const router = createRouter({
             component: () => import('@/views/WebTerminal/WebTerminalPage.vue'),
             children: [
                 {
-                    path: 'web-terminal-introduce',
+                    path: 'introduce',
                     name: 'web-terminal-introduce',
                     component: () => import('@/views/WebTerminal/WebTerminalIntroducePage.vue')
                 },
                 {
-                    path: 'web-terminal-preparation',
+                    path: 'preparation',
                     name: 'web-terminal-preparation',
                     component: () => import('@/views/WebTerminal/WebTerminalPreparetion.vue')
                 },
                 {
-                    path: 'web-terminal-opening',
+                    path: 'opening',
                     name: 'web-terminal-opening',
                     component: () => import('@/views/WebTerminal/WebTerminalOpening.vue')
                 },
                 {
-                    path: 'web-terminal-additional-features',
+                    path: 'additional-features',
                     name: 'web-terminal-additional-features',
                     component: () => import('@/views/WebTerminal/AdditionalFeaturesPage.vue')
                 }
+            ]
+        },
+        {
+            path: '/payment-gateway',
+            name: 'payment-gateway',
+            component: () => import('@/views/PaymentGateway/PaymentGatewayPage.vue'),
+            children: [
+                {
+                    path: 'introduce',
+                    name: 'payment-gateway-introduce',
+                    component: () => import('@/views/PaymentGateway/PaymentGatewayIntroducePage.vue')
+                },
+                {
+                    path: 'preparation',
+                    name: 'payment-gateway-preparation',
+                    component: () => import('@/views/PaymentGateway/PaymentGatewayPreparationPage.vue')
+                },
+                {
+                    path: 'sending-request',
+                    name: 'payment-gateway-sending-request',
+                    component: () => import('@/views/PaymentGateway/PaymentGatewaySendingRequestPage.vue')
+                },
             ]
         },
         {
@@ -154,27 +176,32 @@ const router = createRouter({
                 {
                     path: 'subvendor-management',
                     name: 'market-pay-subvendor-management',
-                    component: () => import('@/views/MarketPay/Subvendor/SubvendorManagementPage.vue'),
+                    component: () =>
+                        import('@/views/MarketPay/Subvendor/SubvendorManagementPage.vue'),
                     children: [
                         {
                             path: 'register-subvendor',
                             name: 'market-pay-subvendor-register',
-                            component: () => import('@/views/MarketPay/Subvendor/RegisterSubvendorPage.vue')
+                            component: () =>
+                                import('@/views/MarketPay/Subvendor/RegisterSubvendorPage.vue')
                         },
                         {
                             path: 'update-subvendor',
                             name: 'market-pay-subvendor-update',
-                            component: () => import('@/views/MarketPay/Subvendor/UpdateSubvendorPage.vue')
+                            component: () =>
+                                import('@/views/MarketPay/Subvendor/UpdateSubvendorPage.vue')
                         },
                         {
                             path: 'confirm-subvendor',
                             name: 'market-pay-subvendor-confirm',
-                            component: () => import('@/views/MarketPay/Subvendor/ConfirmSubvendorPage.vue')
+                            component: () =>
+                                import('@/views/MarketPay/Subvendor/ConfirmSubvendorPage.vue')
                         },
                         {
                             path: 'subvendor-list',
                             name: 'market-pay-subvendor-list',
-                            component: () => import('@/views/MarketPay/Subvendor/SubvendorListPage.vue')
+                            component: () =>
+                                import('@/views/MarketPay/Subvendor/SubvendorListPage.vue')
                         }
                     ]
                 },
@@ -225,15 +252,13 @@ const router = createRouter({
                         {
                             path: 'market-pay-card-registration',
                             name: 'market-pay-card-registration',
-                            component: () =>
-                                import('@/views/MarketPay/Card/CardRegistration.vue')
+                            component: () => import('@/views/MarketPay/Card/CardRegistration.vue')
                         },
                         {
                             path: 'market-pay-card-confirmation',
                             name: 'market-pay-card-confirmation',
-                            component: () =>
-                                import('@/views/MarketPay/Card/CardConfirmation.vue')
-                        },
+                            component: () => import('@/views/MarketPay/Card/CardConfirmation.vue')
+                        }
                     ]
                 }
             ]

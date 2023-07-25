@@ -32,7 +32,8 @@ const paymentProccessImages = [
         alt: '#'
     }
 ];
-const activeIndex = ref(0);
+const paymentProccessActiveIndex = ref(0);
+const paymentStepsActiveIndex = ref(0);
 const responsiveOptions = [
     {
         breakpoint: '1024px',
@@ -47,10 +48,16 @@ const responsiveOptions = [
         numVisible: 1
     }
 ];
-const displayCustom = ref(false);
-function imageClick(index) {
-    activeIndex.value = index;
-    displayCustom.value = true;
+const displayPaymentProccessCustom = ref(false);
+const displayPaymentStepsCustom = ref(false);
+function imageClick(index, type) {
+    if(type == 'paymentProccess'){
+        paymentProccessActiveIndex.value = index;
+        displayPaymentProccessCustom.value = true;
+    } else {
+        paymentStepsActiveIndex.value = index;
+        displayPaymentStepsCustom.value = true;
+    }
 }
 
 const paymentSteps = [
@@ -103,8 +110,8 @@ const paymentSteps = [
     <div class="">
         <h2 class="text-2xl font-bold my-4">Обзор проведения платежа</h2>
         <Galleria
-            v-model:activeIndex="activeIndex"
-            v-model:visible="displayCustom"
+            v-model:activeIndex="paymentProccessActiveIndex"
+            v-model:visible="displayPaymentProccessCustom"
             :value="paymentProccessStepsImages"
             :responsiveOptions="responsiveOptions"
             :numVisible="7"
@@ -142,7 +149,7 @@ const paymentSteps = [
                             :alt="image.alt"
                             style="cursor: pointer"
                             class="w-full h-full object-contain w-full"
-                            @click="imageClick(index)"
+                            @click="imageClick(index, 'paymentProccess')"
                         />
                     </div>
                 </template>
@@ -153,8 +160,8 @@ const paymentSteps = [
         </div>
         <h2 class="text-2xl font-bold my-4">Порядок проведения платежа</h2>
         <Galleria
-            v-model:activeIndex="activeIndex"
-            v-model:visible="displayCustom"
+            v-model:activeIndex="paymentStepsActiveIndex"
+            v-model:visible="displayPaymentStepsCustom"
             :value="paymentProccessImages"
             :responsiveOptions="responsiveOptions"
             :numVisible="7"
@@ -192,7 +199,7 @@ const paymentSteps = [
                             :alt="image.alt"
                             style="cursor: pointer"
                             class="w-full h-full object-contain w-full"
-                            @click="imageClick(index)"
+                            @click="imageClick(index, 'paymentSteps')"
                         />
                     </div>
                 </template>

@@ -141,7 +141,7 @@ const errorsListTable = {
         <p class="my-4"><b>hash</b> — sha1(secret_key + timestamp)</p>
         <p class="my-4"><b>timestamp</b> — UTC Время соединения в миллисекундах</p>
         <p class="my-4">
-            <b>service_id</b> — Идентификатор платежного инструмента в системе PaySys. (Выдается при
+            <b>service_id</b> — Идентификатор платежного инструмента в системе PSP. (Выдается при
             регистрации платежного инструмента)
         </p>
         <p class="my-4">

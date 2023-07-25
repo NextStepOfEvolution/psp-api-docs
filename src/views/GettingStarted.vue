@@ -1,7 +1,8 @@
 <script setup>
-import webkassaImage from '@/assets/images/tools/terminal.png';
+import webkassaImage from '@/assets/images/webkassa-steps/webkassa.png';
 import webterminalImage from '@/assets/images/tools/terminal.png';
 import marketPayImage from '@/assets/images/market-pay/market-pay.png';
+import paymentGatewayImage from '@/assets/images/payment-gateway/gate.png';
 const items = [
     {
         title: 'Web-касса',
@@ -26,7 +27,15 @@ const items = [
         to: {
             name: 'market-pay-concept'
         }
-    }
+    },
+    {
+        title: 'Платежный Шлюз',
+        content: 'Инструмент для взаимодействия с PSP API',
+        image: paymentGatewayImage,
+        to: {
+            name: 'payment-gateway-introduce'
+        }
+    },
 ];
 </script>
 <template>

@@ -56,7 +56,7 @@ const iframeHTMLCode = `<!DOCTYPE html>
         </CodeBlock>
         <BlockPagination
             class=""
-            :prev="{ label: 'Этап 5. Перевод в боевой режим', name: 'webkassa-goto-prodiction' }"
+            :prev="{ label: 'Этап 2. Открытие платежного Web-терминала', name: 'web-terminal-opening' }"
         />
     </div>
 </template>

@@ -179,6 +179,28 @@ export default {
             ]
         },
         {
+            label: 'Платежный шлюз',
+            icon: 'pi pi-fw pi-plus',
+            to: { name: 'payment-gateway-introduce' },
+            childrens: [
+                {
+                    label: 'Общие сведения',
+                    icon: 'pi pi-fw pi-plus',
+                    to: { name: 'payment-gateway-introduce' }
+                },
+                {
+                    label: 'Этап 1. Подготовка к интеграции',
+                    icon: 'pi pi-fw pi-plus',
+                    to: { name: 'payment-gateway-preparation' }
+                },
+                {
+                    label: 'Этап 2. Отправка запроса на Платежный шлюз',
+                    icon: 'pi pi-fw pi-plus',
+                    to: { name: 'payment-gateway-sending-request' }
+                },
+            ]
+        },
+        {
             label: 'Market Pay',
             icon: 'pi pi-fw pi-plus',
             to: { name: 'market-pay-concept' },
