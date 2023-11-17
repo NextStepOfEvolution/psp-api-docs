@@ -7,7 +7,7 @@ let currentDate = new Date().getFullYear();
 </script>
 <template>
     <footer class="max-w-screen-xl mx-auto p-component dark:bg-gray-800 border-t-2 border-gray-200 p-4 px-6">
-        <div class="flex justify-between">
+        <div class="block md:flex justify-between">
             <div class="psp-logo">
                 <img class="w-[200px]" alt="PSP" :src="darkMode ? logoWhite : logoDefault" />
             </div> 
@@ -44,6 +44,6 @@ let currentDate = new Date().getFullYear();
                 </article>
             </div>
         </div>
-        <p class="text-end text-base text-slate-800 dark:text-gray-100 m-0.5 p-1">Copyright © 2021-{{ currentDate }} PSP</p>
+        <p class="md:text-end text-center text-base text-slate-800 dark:text-gray-100 m-0.5 p-1">Copyright © 2021-{{ currentDate }} PSP</p>
     </footer>
 </template>

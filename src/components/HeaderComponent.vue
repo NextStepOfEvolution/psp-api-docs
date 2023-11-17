@@ -12,6 +12,7 @@ const pt = reactive({
     root: { class: 'bg-purple-800' },
     icon: { class: { 'text-white': darkMode } }
 });
+const emit = defineEmits(['mobileMenu']);
 </script>
 <template>
     <header class="sticky top-0 z-10">
@@ -32,7 +33,7 @@ const pt = reactive({
                             size="small"
                             @click="
                                 (event) => {
-                                    mobileMenuIsActive = true;
+                                    emit('mobileMenu', true) 
                                 }
                             "
                             ><i class="pi pi-book"></i

@@ -52,7 +52,9 @@ const items = [
                 class="text-center dark:text-gray-200 dark:bg-gray-900 p-5"
             >
                 <template #header>
-                    <img class="w-[100px] h-[100px] mx-auto" :src="item.image" alt="Web-касса" />
+                    <router-link :to="item.to">
+                        <img class="w-[100px] h-[100px] mx-auto" :src="item.image" alt="Web-касса" />
+                    </router-link>
                 </template>
                 <template #title
                     ><b

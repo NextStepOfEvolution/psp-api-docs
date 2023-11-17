@@ -27,7 +27,7 @@ onMounted(() => {
     <Toast></Toast>
     <div v-if="isLoaded" :class="{ dark: darkMode }">
         <section class="dark:bg-gray-950 min-h-screen">
-            <HeaderComponent></HeaderComponent>
+            <HeaderComponent @mobileMenu="(value)=> { mobileMenuIsActive = value;}"></HeaderComponent>
             <div
                 class="min-h-[calc(100vh-73px)] max-w-screen-xl flex justify-center mx-auto overscroll-x-none dark:bg-gray-800 text-gray-900 dark:text-gray-300"
             >
