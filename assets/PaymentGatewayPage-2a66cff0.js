@@ -1,1 +1,0 @@
-import{_ as o,r as t,o as s,c as a,d as c,a as n}from"./index-ab9007e5.js";const r={},_={class:""},d=n("h1",{class:"text-4xl font-bold my-4"},"Платежный Шлюз",-1);function l(i,m){const e=t("router-view");return s(),a("div",_,[d,c(e)])}const p=o(r,[["render",l]]);export{p as default};
