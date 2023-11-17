@@ -1,75 +1,33 @@
 <script setup>
 import SideBar from '@/components/SideBar.vue';
-import Menubar from 'primevue/menubar';
+
 import ContentBlock from '@/components/ContentBlock.vue';
-import { onMounted, reactive, ref, watchEffect } from 'vue';
-import ToggleButton from 'primevue/togglebutton';
-import logoWhite from '@/assets/images/logo-white.png';
-import logoDefault from '@/assets/images/logo-blue.png';
+import HeaderComponent from '@/components/HeaderComponent.vue';
+import FooterComponent from '@/components/FooterComponent.vue';
+import { onMounted, ref } from 'vue';
+import { useDark } from '@vueuse/core'
 import PrimeSidebar from 'primevue/sidebar';
 
-const darkMode = ref(false);
 const mobileMenuIsActive = ref(false);
-const isLoaded = ref(false);
-const pt = reactive({
-    root: { class: 'bg-purple-800' },
-    icon: { class: { 'text-white': darkMode.value } }
-});
+const isLoaded = ref(false); 
+const darkMode = useDark();
 
-darkMode.value = localStorage.getItem('mode') == 'dark' ? true : false;
+// darkMode.value = localStorage.getItem('mode') == 'dark' ? true : false;
 onMounted(() => {
     document.title = 'PSP API DOCS';
     setTimeout(() => {
         isLoaded.value = true;
     }, 800);
 });
-watchEffect(() => {
-    localStorage.setItem('mode', darkMode.value ? 'dark' : 'light');
-});
+// watchEffect(() => {
+//     localStorage.setItem('mode', darkMode.value ? 'dark' : 'light');
+// });
 </script>
 <template>
     <Toast></Toast>
     <div v-if="isLoaded" :class="{ dark: darkMode }">
         <section class="dark:bg-gray-950 min-h-screen">
-            <header class="sticky top-0 z-10">
-                <div class="block max-w-screen-xl mx-auto">
-                    <Menubar :class="{ dark: darkMode, 'dark:bg-gray-800': darkMode }" :model="[]">
-                        <template #start>
-                            <div class="flex">
-                                <div class="psp-logo">
-                                    <img
-                                        class="mr-2 w-24"
-                                        alt="PSP"
-                                        :src="darkMode ? logoWhite : logoDefault"
-                                        height="40"
-                                    />
-                                </div>
-                                <Button
-                                    class="block md:!hidden"
-                                    size="small"
-                                    @click="
-                                        (event) => {
-                                            mobileMenuIsActive = true;
-                                        }
-                                    "
-                                    ><i class="pi pi-book"></i
-                                ></Button>
-                            </div>
-                        </template>
-                        <template #end>
-                            <ToggleButton
-                                onLabel=""
-                                offLabel=""
-                                onIcon="pi pi-sun"
-                                offIcon="pi pi-moon"
-                                v-model="darkMode"
-                                :pt="pt"
-                            >
-                            </ToggleButton>
-                        </template>
-                    </Menubar>
-                </div>
-            </header>
+            <HeaderComponent></HeaderComponent>
             <div
                 class="min-h-[calc(100vh-73px)] max-w-screen-xl flex justify-center mx-auto overscroll-x-none dark:bg-gray-800 text-gray-900 dark:text-gray-300"
             >
@@ -92,6 +50,7 @@ watchEffect(() => {
                     ]"
                 />
             </div>
+            <FooterComponent></FooterComponent>
         </section>
     </div>
     <LoaderComponent v-else />
@@ -101,7 +60,7 @@ watchEffect(() => {
     border-top: none !important;
     border-right: none !important;
     border-left: none !important;
-} 
+}
 @keyframes bounce {
     from {
         transform: translate3d(0, 0, 0);
@@ -110,7 +69,7 @@ watchEffect(() => {
         transform: translate3d(0, 15px, 0);
     }
 }
-.psp-logo{
+.psp-logo {
     transition: all ease;
 }
 .psp-logo:hover {
